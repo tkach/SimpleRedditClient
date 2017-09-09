@@ -9,5 +9,5 @@ struct NewsItem {
     let author: String
     let comments: Int
     let date: Date
-    let thumbnailUrlString: String
+    let thumbnailUrlString: String?
 }

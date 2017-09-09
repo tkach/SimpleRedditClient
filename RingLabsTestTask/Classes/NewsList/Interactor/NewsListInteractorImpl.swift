@@ -9,9 +9,27 @@ final class NewsListInteractorImpl {
     
     init() {
     }
+    
+    func testItems() -> [NewsItem] {
+        let string = rawTopResponse
+        guard let data = string.data(using: .utf8) else {
+            fatalError()
+        }
+        let object: [String: Any] = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String : Any]
+        let data1: [String: Any] = object["data"] as! [String: Any]
+        let array = data1["children"] as! [[String: Any]]
+        return array.map {
+            let representation = $0 as! [String: Any]
+            let postDict = representation["data"] as! [String: Any]
+            return NewsItem(title: postDict["title"] as! String,
+                            author: postDict["author"] as! String,
+                            comments: 0, date: Date(),
+                            thumbnailUrlString: nil)
+        }
+    }
 }
 
-private var fetchCounts: Int = 0
+private var fetchCounts: Int = 2
 
 extension NewsListInteractorImpl: NewsListInteractorInput {
     func fetchNewsList() {
@@ -23,8 +41,8 @@ extension NewsListInteractorImpl: NewsListInteractorInput {
         }
         else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.output?.didLoad(news: [])
+                self.output?.didLoad(news: self.testItems())
             }
         }
     }
-}                  
+}

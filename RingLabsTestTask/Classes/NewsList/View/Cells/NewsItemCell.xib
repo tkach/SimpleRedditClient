@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HfF-lN-ti1" customClass="NewsItemCell" customModule="RingLabsTestTask" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="171" height="127"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="171" height="127"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNF-u3-v1B">
+                        <rect key="frame" x="0.0" y="0.0" width="171" height="127"/>
+                        <string key="text">Label
+sdffsd</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="RNF-u3-v1B" firstAttribute="leading" secondItem="HfF-lN-ti1" secondAttribute="leading" id="5cY-8Y-5tb"/>
+                <constraint firstItem="RNF-u3-v1B" firstAttribute="top" secondItem="HfF-lN-ti1" secondAttribute="top" id="8uY-f9-g6h"/>
+                <constraint firstAttribute="bottom" secondItem="RNF-u3-v1B" secondAttribute="bottom" id="Rh9-0w-lh0"/>
+                <constraint firstAttribute="trailing" secondItem="RNF-u3-v1B" secondAttribute="trailing" id="phm-Aj-QBE"/>
+            </constraints>
+            <size key="customSize" width="171" height="127"/>
+            <connections>
+                <outlet property="title" destination="RNF-u3-v1B" id="8SI-RJ-Wki"/>
+            </connections>
+            <point key="canvasLocation" x="-64.5" y="-78.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
