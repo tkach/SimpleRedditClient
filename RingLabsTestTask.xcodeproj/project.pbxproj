@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B5E23F451F63C67B003A59F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E23F441F63C67B003A59F1 /* AppDelegate.swift */; };
-		B5E23F471F63C67B003A59F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E23F461F63C67B003A59F1 /* ViewController.swift */; };
-		B5E23F4A1F63C67B003A59F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E23F481F63C67B003A59F1 /* Main.storyboard */; };
-		B5E23F4C1F63C67B003A59F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E23F4B1F63C67B003A59F1 /* Assets.xcassets */; };
-		B5E23F4F1F63C67B003A59F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E23F4D1F63C67B003A59F1 /* LaunchScreen.storyboard */; };
+		B069C2D3AF338A66F1633358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B069CA96125AE897E82FB815 /* Assets.xcassets */; };
+		B069C36A6417F987BC093F5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B069C20972A3E1DA0C20E69E /* LaunchScreen.storyboard */; };
+		B069C63D9EC2545983C92CC3 /* ControllersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CF21A652A71C1957AED8 /* ControllersAssembly.swift */; };
+		B069C654429BE60B4DE8119E /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C10539C13AB0A2B5D23E /* AppAssembly.swift */; };
+		B069C6723318AAE501CACEB2 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C3758BCC51387190CEDE /* AppRouter.swift */; };
+		B069C90F51F506DA446E3ED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C68505A5C9D4825EE5B3 /* AppDelegate.swift */; };
+		B069CAA2AD05B96ECA2E5DD2 /* APIAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C1FEAF802A82EBAAC557 /* APIAssembly.swift */; };
+		B069CB9E96B9B9C93941A99B /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C03DD71A6475BE9BC82E /* NewsListViewController.swift */; };
+		B069CC8155CD1540FEA30D1F /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CEE3107E3125FFDEF83E /* UIViewController+Storyboard.swift */; };
+		B5E23F571F63CFB0003A59F1 /* NewsListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E23F561F63CFB0003A59F1 /* NewsListViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B069C03DD71A6475BE9BC82E /* NewsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
+		B069C10539C13AB0A2B5D23E /* AppAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		B069C1FEAF802A82EBAAC557 /* APIAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIAssembly.swift; sourceTree = "<group>"; };
+		B069C3758BCC51387190CEDE /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		B069C62D22E17C471DA3910F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RingLabsTestTask/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		B069C68505A5C9D4825EE5B3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B069CA510E4C251F51C6D219 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		B069CA96125AE897E82FB815 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B069CEE3107E3125FFDEF83E /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
+		B069CF21A652A71C1957AED8 /* ControllersAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllersAssembly.swift; sourceTree = "<group>"; };
 		B5E23F411F63C67B003A59F1 /* RingLabsTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RingLabsTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5E23F441F63C67B003A59F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B5E23F461F63C67B003A59F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B5E23F491F63C67B003A59F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B5E23F4B1F63C67B003A59F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B5E23F4E1F63C67B003A59F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B5E23F501F63C67B003A59F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5E23F561F63CFB0003A59F1 /* NewsListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsListViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +45,109 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B069C010D979FA1015667004 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B069CE384E78535B7FF50C01 /* Extensions */,
+				B069C4912AD24B6743D9F0E6 /* Router */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B069C09E7DFB957524608A4E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B069CA510E4C251F51C6D219 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B069C4912AD24B6743D9F0E6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B069C3758BCC51387190CEDE /* AppRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B069C5367513AF78D63BCBB4 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B069CEE3107E3125FFDEF83E /* UIViewController+Storyboard.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		B069C592F5495A107CF26F3E /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B069C68505A5C9D4825EE5B3 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		B069C6A30A13C2D51435EFC9 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B5E23F561F63CFB0003A59F1 /* NewsListViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B069CB58185BFFBDF940A666 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B069CA96125AE897E82FB815 /* Assets.xcassets */,
+				B069C20972A3E1DA0C20E69E /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B069CBF2CB44B332775D03A6 /* NewsList */ = {
+			isa = PBXGroup;
+			children = (
+				B069C03DD71A6475BE9BC82E /* NewsListViewController.swift */,
+				B069C6A30A13C2D51435EFC9 /* Storyboard */,
+			);
+			path = NewsList;
+			sourceTree = "<group>";
+		};
+		B069CD753EF4F1EB78745D0C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B069C592F5495A107CF26F3E /* AppDelegate */,
+				B069CE9E170607D50765635C /* Assemblies */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B069CE0B97DE0F332C92777E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B069CBF2CB44B332775D03A6 /* NewsList */,
+			);
+			name = Modules;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B069CE384E78535B7FF50C01 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B069C5367513AF78D63BCBB4 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B069CE9E170607D50765635C /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				B069C10539C13AB0A2B5D23E /* AppAssembly.swift */,
+				B069C1FEAF802A82EBAAC557 /* APIAssembly.swift */,
+				B069CF21A652A71C1957AED8 /* ControllersAssembly.swift */,
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
 		B5E23F381F63C67B003A59F1 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +167,11 @@
 		B5E23F431F63C67B003A59F1 /* RingLabsTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				B5E23F441F63C67B003A59F1 /* AppDelegate.swift */,
-				B5E23F461F63C67B003A59F1 /* ViewController.swift */,
-				B5E23F481F63C67B003A59F1 /* Main.storyboard */,
-				B5E23F4B1F63C67B003A59F1 /* Assets.xcassets */,
-				B5E23F4D1F63C67B003A59F1 /* LaunchScreen.storyboard */,
-				B5E23F501F63C67B003A59F1 /* Info.plist */,
+				B069CB58185BFFBDF940A666 /* Resources */,
+				B069C09E7DFB957524608A4E /* SupportingFiles */,
+				B069C010D979FA1015667004 /* Common */,
+				B069CE0B97DE0F332C92777E /* Modules */,
+				B069CD753EF4F1EB78745D0C /* Application */,
 			);
 			path = RingLabsTestTask;
 			sourceTree = "<group>";
@@ -122,9 +234,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5E23F4F1F63C67B003A59F1 /* LaunchScreen.storyboard in Resources */,
-				B5E23F4C1F63C67B003A59F1 /* Assets.xcassets in Resources */,
-				B5E23F4A1F63C67B003A59F1 /* Main.storyboard in Resources */,
+				B069C2D3AF338A66F1633358 /* Assets.xcassets in Resources */,
+				B069C36A6417F987BC093F5E /* LaunchScreen.storyboard in Resources */,
+				B5E23F571F63CFB0003A59F1 /* NewsListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,26 +247,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5E23F471F63C67B003A59F1 /* ViewController.swift in Sources */,
-				B5E23F451F63C67B003A59F1 /* AppDelegate.swift in Sources */,
+				B069CB9E96B9B9C93941A99B /* NewsListViewController.swift in Sources */,
+				B069CC8155CD1540FEA30D1F /* UIViewController+Storyboard.swift in Sources */,
+				B069C90F51F506DA446E3ED2 /* AppDelegate.swift in Sources */,
+				B069C654429BE60B4DE8119E /* AppAssembly.swift in Sources */,
+				B069CAA2AD05B96ECA2E5DD2 /* APIAssembly.swift in Sources */,
+				B069C6723318AAE501CACEB2 /* AppRouter.swift in Sources */,
+				B069C63D9EC2545983C92CC3 /* ControllersAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B5E23F481F63C67B003A59F1 /* Main.storyboard */ = {
+		B069C20972A3E1DA0C20E69E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B5E23F491F63C67B003A59F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B5E23F4D1F63C67B003A59F1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B5E23F4E1F63C67B003A59F1 /* Base */,
+				B069C62D22E17C471DA3910F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -261,7 +370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = RingLabsTestTask/Info.plist;
+				INFOPLIST_FILE = RingLabsTestTask/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = organization.RingLabsTestTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -273,7 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = RingLabsTestTask/Info.plist;
+				INFOPLIST_FILE = RingLabsTestTask/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = organization.RingLabsTestTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +409,7 @@
 				B5E23F551F63C67B003A59F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
