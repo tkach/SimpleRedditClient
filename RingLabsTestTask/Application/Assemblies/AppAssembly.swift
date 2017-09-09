@@ -7,11 +7,12 @@ import Foundation
 final class AppAssembly {
     private let apiAssembly: APIAssembly
     let router: AppRouter
-    private let controllersAssembly: ControllersAssembly
+    private let controllersAssembly: ModulesAssembly
 
     init() {
         apiAssembly = APIAssembly()
-        controllersAssembly = ControllersAssembly()
+        controllersAssembly = ModulesAssembly()
         router = AppRouter(controllersAssembly: controllersAssembly)
+        controllersAssembly.router = router
     }
 }

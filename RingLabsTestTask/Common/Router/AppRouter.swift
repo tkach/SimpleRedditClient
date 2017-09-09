@@ -5,13 +5,20 @@
 import UIKit
 
 final class AppRouter {
-    private let controllersAssembly: ControllersAssembly
+    private let controllersAssembly: ModulesAssembly
+    private lazy var navigationController: UINavigationController = {
+        return UINavigationController(rootViewController: self.controllersAssembly.newsListViewController())
+    }()
 
-    init(controllersAssembly: ControllersAssembly) {
+    init(controllersAssembly: ModulesAssembly) {
         self.controllersAssembly = controllersAssembly
     }
 
     func rootViewController() -> UIViewController {
-        return controllersAssembly.newsListViewController()
+        return navigationController
     }
+}
+
+extension AppRouter: NewsListRouter {
+    
 }

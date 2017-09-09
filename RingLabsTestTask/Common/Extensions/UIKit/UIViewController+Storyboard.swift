@@ -1,5 +1,5 @@
 //
-//  NewsListViewController.swift
+//  NewsListAssembly.swift
 //  RingLabsTestTask
 //
 //  Created by Alexander Tkachenko on 9/9/17.
