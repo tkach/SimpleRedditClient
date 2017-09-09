@@ -41,7 +41,6 @@ class NewsListViewController: UIViewController {
             collectionView.register(nib, forCellWithReuseIdentifier: identifier)
         }
         collectionDelegate.model = collectionModel
-//        collectionLayout.estimatedItemSize = CGSize(width: 200, height: 50)
         collectionView.delegate = collectionDelegate
         collectionView.dataSource = collectionDataSource
     }
@@ -50,7 +49,15 @@ class NewsListViewController: UIViewController {
         super.viewWillLayoutSubviews()
         collectionLayout.invalidateLayout()
     }
-
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        rememberCurrentVisibleCell()
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+    
+    private func rememberCurrentVisibleCell() {
+        collectionDelegate.centeredIndexPath = collectionView.indexPathForVisibleItemAtCenter
+    }
 }
 
 extension NewsListViewController: NewsListView {

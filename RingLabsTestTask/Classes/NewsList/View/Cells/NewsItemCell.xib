@@ -6,39 +6,104 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HfF-lN-ti1" customClass="NewsItemCell" customModule="RingLabsTestTask" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="171" height="127"/>
+            <rect key="frame" x="0.0" y="0.0" width="287" height="201.5"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="171" height="127"/>
+                <rect key="frame" x="0.0" y="0.0" width="287" height="201.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNF-u3-v1B">
-                        <rect key="frame" x="0.0" y="0.0" width="171" height="127"/>
+                        <rect key="frame" x="0.0" y="120" width="287" height="41"/>
                         <string key="text">Label
 sdffsd</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 hours ago" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-hy-9zf" userLabel="Date">
+                        <rect key="frame" x="0.0" y="183.5" width="82" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submitted by" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvo-l1-oOo" userLabel="Author">
+                        <rect key="frame" x="0.0" y="160.5" width="102.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 comments" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXX-1y-boX" userLabel="Comments">
+                        <rect key="frame" x="195" y="183.5" width="92" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9h-3d-2sN" customClass="ImageLoadableView" customModule="RingLabsTestTask" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="287" height="120"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2u-0f-MFS">
+                                <rect key="frame" x="0.0" y="0.0" width="287" height="120"/>
+                                <color key="backgroundColor" red="0.86244612070000004" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-NZ-f6D">
+                                <rect key="frame" x="0.0" y="-0.5" width="287" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="p9h-3d-2sN" secondAttribute="height" multiplier="287:120" id="Abh-Df-c0v"/>
+                            <constraint firstAttribute="trailing" secondItem="BWd-NZ-f6D" secondAttribute="trailing" id="MpP-nh-wpl"/>
+                            <constraint firstAttribute="trailing" secondItem="N2u-0f-MFS" secondAttribute="trailing" id="VTG-uM-Hwc"/>
+                            <constraint firstAttribute="bottom" secondItem="BWd-NZ-f6D" secondAttribute="bottom" id="WgC-vt-Zbl"/>
+                            <constraint firstItem="BWd-NZ-f6D" firstAttribute="leading" secondItem="p9h-3d-2sN" secondAttribute="leading" id="XrR-DR-83g"/>
+                            <constraint firstItem="N2u-0f-MFS" firstAttribute="leading" secondItem="p9h-3d-2sN" secondAttribute="leading" id="ahy-gQ-2H7"/>
+                            <constraint firstItem="BWd-NZ-f6D" firstAttribute="top" secondItem="p9h-3d-2sN" secondAttribute="top" id="hVz-P7-T9K"/>
+                            <constraint firstItem="N2u-0f-MFS" firstAttribute="top" secondItem="p9h-3d-2sN" secondAttribute="top" id="x1U-PX-7ry"/>
+                            <constraint firstAttribute="bottom" secondItem="N2u-0f-MFS" secondAttribute="bottom" id="x3K-xQ-623"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="imageView" destination="BWd-NZ-f6D" id="avC-Ul-ttB"/>
+                            <outlet property="placeholderView" destination="N2u-0f-MFS" id="XbY-aP-v6j"/>
+                        </connections>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="RNF-u3-v1B" firstAttribute="leading" secondItem="HfF-lN-ti1" secondAttribute="leading" id="5cY-8Y-5tb"/>
-                <constraint firstItem="RNF-u3-v1B" firstAttribute="top" secondItem="HfF-lN-ti1" secondAttribute="top" id="8uY-f9-g6h"/>
-                <constraint firstAttribute="bottom" secondItem="RNF-u3-v1B" secondAttribute="bottom" id="Rh9-0w-lh0"/>
+                <constraint firstAttribute="bottom" secondItem="KBx-hy-9zf" secondAttribute="bottom" id="5eF-MD-WK2"/>
+                <constraint firstItem="p9h-3d-2sN" firstAttribute="leading" secondItem="HfF-lN-ti1" secondAttribute="leading" id="8Ce-ye-i5s"/>
+                <constraint firstItem="RNF-u3-v1B" firstAttribute="top" secondItem="p9h-3d-2sN" secondAttribute="bottom" id="Icb-UO-wDl"/>
+                <constraint firstAttribute="trailing" secondItem="p9h-3d-2sN" secondAttribute="trailing" id="djy-1V-JeG"/>
+                <constraint firstItem="p9h-3d-2sN" firstAttribute="top" secondItem="HfF-lN-ti1" secondAttribute="top" id="dvG-Ke-NJb"/>
+                <constraint firstItem="KBx-hy-9zf" firstAttribute="leading" secondItem="HfF-lN-ti1" secondAttribute="leading" id="e1e-Ol-DZK"/>
+                <constraint firstAttribute="trailing" secondItem="AXX-1y-boX" secondAttribute="trailing" id="ikW-59-y40"/>
+                <constraint firstItem="Mvo-l1-oOo" firstAttribute="leading" secondItem="HfF-lN-ti1" secondAttribute="leading" id="jKH-dO-QEX"/>
+                <constraint firstItem="KBx-hy-9zf" firstAttribute="top" secondItem="Mvo-l1-oOo" secondAttribute="bottom" constant="2" id="njK-DT-oJx"/>
+                <constraint firstAttribute="bottom" secondItem="AXX-1y-boX" secondAttribute="bottom" id="oAz-SM-mqY"/>
                 <constraint firstAttribute="trailing" secondItem="RNF-u3-v1B" secondAttribute="trailing" id="phm-Aj-QBE"/>
+                <constraint firstItem="Mvo-l1-oOo" firstAttribute="top" secondItem="RNF-u3-v1B" secondAttribute="bottom" id="sea-8y-ekk"/>
             </constraints>
-            <size key="customSize" width="171" height="127"/>
+            <size key="customSize" width="287" height="203"/>
             <connections>
-                <outlet property="title" destination="RNF-u3-v1B" id="8SI-RJ-Wki"/>
+                <outlet property="authorLabel" destination="Mvo-l1-oOo" id="nkJ-pW-Q8E"/>
+                <outlet property="commentsLabel" destination="AXX-1y-boX" id="OJS-2U-dfa"/>
+                <outlet property="dateLabel" destination="KBx-hy-9zf" id="r4L-Bi-TNK"/>
+                <outlet property="posterAspect" destination="Abh-Df-c0v" id="VgJ-ZX-U9P"/>
+                <outlet property="posterView" destination="p9h-3d-2sN" id="Uwm-Zc-e8Z"/>
+                <outlet property="titleLabel" destination="RNF-u3-v1B" id="dcb-7w-l8l"/>
             </connections>
-            <point key="canvasLocation" x="-64.5" y="-78.5"/>
+            <point key="canvasLocation" x="-157" y="-154"/>
         </collectionViewCell>
     </objects>
 </document>

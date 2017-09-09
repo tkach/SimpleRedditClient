@@ -8,9 +8,12 @@ final class AppAssembly {
     private let apiAssembly: APIAssembly
     let router: AppRouter
     private let controllersAssembly: ModulesAssembly
+    private (set) var utilsAssembly: UtilsAssembly
 
     init() {
         apiAssembly = APIAssembly()
+        utilsAssembly = UtilsAssembly()
+
         controllersAssembly = ModulesAssembly()
         router = AppRouter(controllersAssembly: controllersAssembly)
         controllersAssembly.router = router

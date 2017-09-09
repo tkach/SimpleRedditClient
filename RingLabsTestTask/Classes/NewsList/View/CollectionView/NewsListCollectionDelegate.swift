@@ -11,7 +11,7 @@ protocol NewsListActionsDelegate: class {
 final class NewsListCollectionDelegate: NSObject {
     private weak var actionsDelegate: NewsListActionsDelegate?
     weak var model: NewsListCollectionModel?
-
+    var centeredIndexPath: IndexPath?
     init(actionsDelegate: NewsListActionsDelegate) {
         self.actionsDelegate = actionsDelegate
     }
@@ -19,7 +19,7 @@ final class NewsListCollectionDelegate: NSObject {
 
 extension NewsListCollectionDelegate: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let proposedSize = CGSize(width: collectionView.bounds.width - 50, height: 10)
+        let proposedSize = CGSize(width: collectionView.bounds.width - 50, height: 1000)
 //        return proposedSize
         guard let model = model?.cellModel(atIndexPath: indexPath) else { fatalError()}
         
@@ -39,4 +39,16 @@ extension NewsListCollectionDelegate: UICollectionViewDelegateFlowLayout {
                 verticalFittingPriority: heightPriority)
         return CGSize(width: ceil(size.width), height: ceil(size.height))
     }
+
+    public func collectionView(_ collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
+        guard let indexPath = centeredIndexPath,
+              let attributes = collectionView.layoutAttributesForItem(at: indexPath)
+                else {
+            return proposedContentOffset
+        }
+        let offsetY = attributes.frame.midY - collectionView.frame.size.height / 2
+        let result = CGPoint(x: 0, y: max(0, offsetY.rounded()))
+        return result
+    }
+
 }

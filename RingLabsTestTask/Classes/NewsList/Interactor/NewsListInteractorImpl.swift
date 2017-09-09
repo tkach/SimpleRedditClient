@@ -24,7 +24,7 @@ final class NewsListInteractorImpl {
             return NewsItem(title: postDict["title"] as! String,
                             author: postDict["author"] as! String,
                             comments: 0, date: Date(),
-                            thumbnailUrlString: nil)
+                            thumbnailUrlString: postDict["thumbnail"] as? String)
         }
     }
 }
