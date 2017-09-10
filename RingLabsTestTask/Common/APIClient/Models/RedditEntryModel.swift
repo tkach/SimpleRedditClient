@@ -5,6 +5,7 @@
 import UIKit
 
 struct RedditEntryModel {
+    let name: String
     let title: String
     let author: String
     let comments: Int
@@ -13,6 +14,7 @@ struct RedditEntryModel {
     let image: RedditImageModel
 
     init(map: Map) throws {
+        try name = map.from("name")
         try title = map.from("title")
         try author = map.from("author")
         try comments = map.from("num_comments")

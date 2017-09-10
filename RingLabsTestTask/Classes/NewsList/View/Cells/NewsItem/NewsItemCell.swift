@@ -16,7 +16,7 @@ final class NewsItemCell: UICollectionViewCell {
     @IBOutlet weak var posterHeight: NSLayoutConstraint!
     @IBOutlet weak var posterWidth: NSLayoutConstraint!
     
-    fileprivate let originalAspect: CGFloat = 0.2
+    fileprivate let originalAspect: CGFloat = 0.5
 
     //injectable from NewsListDataSource
     var dateFormatter: DateFormatter!
@@ -40,7 +40,7 @@ extension NewsItemCell: UpdatableCell {
 
         posterView.load(imageURL: item.thumbnailUrl)
         
-        if (item.thumbnailAspect > 0) {
+        if (item.thumbnailAspect > 0.5) {
             posterWidth.constant = posterHeight.constant * item.thumbnailAspect
         }
         else {

@@ -48,7 +48,7 @@ extension NewsListCollectionDataSource: UICollectionViewDataSource {
             cell.update(with: model)
         }
         else {
-            fatalError("Cell is created but not updated because type of cell and model is not listed in the cases above")
+            fatalError("Cell is created but can be updated because type of cell and model is not listed in the cases above")
         }
         return cell
 

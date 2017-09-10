@@ -16,7 +16,7 @@ final class NewsListInteractorImpl {
 
 extension NewsListInteractorImpl: NewsListInteractorInput {
     func fetchNewsList() {
-        newsListService.loadNewsList {
+        newsListService.loadNewsList() {
             [weak self] result in
             switch(result) {
             case .success(let response):
@@ -28,6 +28,15 @@ extension NewsListInteractorImpl: NewsListInteractorInput {
     }
 
     func fetchNextItems() {
+        newsListService.loadNextNewsList() {
+            result in
+            switch(result) {
+            case .success(let response):
+                self.didLoad(next: true, response: response)
+            case .error(let error):
+                self.didFail(with: error)
+            }
+        }
 //        newsListService.loadNewsList {
 //            [weak self] result in
 //            switch(result) {
@@ -53,7 +62,7 @@ extension NewsListInteractorImpl: NewsListInteractorInput {
 //        }
     }
 
-    private func didLoad(response: EntriesListResponse) {
+    private func didLoad(next: Bool = false, response: EntriesListResponse) {
         let news = response.list.map {
                 entry -> NewsItem in
                 let date = Date(timeIntervalSince1970: entry.created)
@@ -66,7 +75,14 @@ extension NewsListInteractorImpl: NewsListInteractorInput {
                         thumbnailAspect: aspect,
                         originalUrl: entry.image.url)
         }
-        output?.didLoad(news: news)
+        if (next) {
+            loadedItems.append(contentsOf: news)
+            output?.didLoadNext(news: loadedItems)
+        }
+        else {
+            loadedItems.append(contentsOf: news)
+            output?.didLoad(news: loadedItems)
+        }
     }
 
     private func didFail(with error: NetworkError) {

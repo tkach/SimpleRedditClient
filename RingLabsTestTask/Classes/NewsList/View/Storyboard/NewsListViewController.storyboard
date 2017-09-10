@@ -13,7 +13,7 @@
         <!--News List View Controller-->
         <scene sceneID="MDd-Dr-wO6">
             <objects>
-                <viewController storyboardIdentifier="NewsListViewController" id="M4W-jQ-v3y" customClass="NewsListViewController" customModule="RingLabsTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsListViewController" automaticallyAdjustsScrollViewInsets="NO" id="M4W-jQ-v3y" customClass="NewsListViewController" customModule="RingLabsTestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nmz-Db-lBR"/>
                         <viewControllerLayoutGuide type="bottom" id="qjp-S0-Pk9"/>
@@ -92,8 +92,8 @@ wrong</string>
                             <constraint firstItem="JFf-wI-y3y" firstAttribute="centerX" secondItem="Vfv-tU-Eat" secondAttribute="centerX" id="JXS-jv-Auc"/>
                             <constraint firstItem="TWC-pQ-uTf" firstAttribute="leading" secondItem="Vfv-tU-Eat" secondAttribute="leadingMargin" id="YQp-C5-dMJ"/>
                             <constraint firstItem="fDT-zF-Jq1" firstAttribute="centerY" secondItem="Vfv-tU-Eat" secondAttribute="centerY" id="aQf-LE-Dem"/>
+                            <constraint firstItem="TWC-pQ-uTf" firstAttribute="top" secondItem="Nmz-Db-lBR" secondAttribute="bottom" id="dcG-2M-OhB"/>
                             <constraint firstItem="fDT-zF-Jq1" firstAttribute="centerX" secondItem="Vfv-tU-Eat" secondAttribute="centerX" id="gjP-CZ-Bln"/>
-                            <constraint firstItem="TWC-pQ-uTf" firstAttribute="top" secondItem="Nmz-Db-lBR" secondAttribute="bottom" id="o8S-a3-usN"/>
                         </constraints>
                     </view>
                     <connections>

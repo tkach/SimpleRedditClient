@@ -40,12 +40,14 @@ extension NewsListPresenterImpl: NewsListPresenter {
 
 extension NewsListPresenterImpl: NewsListInteractorOutput {
     func didLoad(news: [NewsItem]) {
+        print("news count: \(news.count)")
         self.news = news
         view.update(with: .loaded(NewsListViewModel(newsItemsLoaded: news, hasMore: true, loadMoreFailed: false)))
     }
 
     func didLoadNext(news: [NewsItem]) {
-        self.news = news
+        self.news.append(contentsOf: news)
+        print("news count: \(news.count)")
         view.update(with: .loaded(NewsListViewModel(newsItemsLoaded: news, hasMore: true, loadMoreFailed: false)))
     }
 

@@ -54,12 +54,12 @@ latest news and features</string>
                                 <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="brU-Rv-rIZ">
-                                        <rect key="frame" x="36" y="36" width="48" height="48"/>
+                                        <rect key="frame" x="14" y="36" width="48" height="48"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="brU-Rv-rIZ" firstAttribute="centerX" secondItem="N2u-0f-MFS" secondAttribute="centerX" id="qN3-bX-6OE"/>
+                                    <constraint firstItem="brU-Rv-rIZ" firstAttribute="leading" secondItem="N2u-0f-MFS" secondAttribute="leading" constant="14" id="KQP-9A-QRv"/>
                                     <constraint firstItem="brU-Rv-rIZ" firstAttribute="centerY" secondItem="N2u-0f-MFS" secondAttribute="centerY" id="z72-Px-EWy"/>
                                 </constraints>
                             </view>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B069C068BBF1B75007A3A6A7 /* MappingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C77D59BFFC6490A502CD /* MappingError.swift */; };
+		B069C0A0A67834AA92545247 /* RedditAPIClientImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CEE55AC4CB5F1EC5F80E /* RedditAPIClientImpl.swift */; };
 		B069C106360CE4EC7B0AD7A9 /* NewsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C746F2919D241E1461C1 /* NewsItemViewController.swift */; };
 		B069C131067427A14C5F826C /* ImageLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C68B8A01F82D1E52122E /* ImageLoadableView.swift */; };
 		B069C161F556A649662ACC35 /* NewsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C6F329121C106F573CDA /* NewsListInteractor.swift */; };
@@ -15,14 +16,17 @@
 		B069C208915C3A33D6BE9331 /* NewsListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B069CE9F352E1DB1B7528E64 /* NewsListViewController.storyboard */; };
 		B069C2372F3F869EA4EDFA19 /* UtilsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C21A20C78F7B9ED38B3F /* UtilsAssembly.swift */; };
 		B069C2D3AF338A66F1633358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B069CA96125AE897E82FB815 /* Assets.xcassets */; };
+		B069C2D8014C379EE7416107 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C6D3D3BCB7EA31665FDB /* RequestBuilder.swift */; };
 		B069C36A6417F987BC093F5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B069C20972A3E1DA0C20E69E /* LaunchScreen.storyboard */; };
 		B069C44ED486872E960459C6 /* NewsItemAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C00AD965906E8103C2A6 /* NewsItemAssembly.swift */; };
 		B069C47AAAC3CB4C98F9B310 /* ImageLoaderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CB19DE6D1C6EB8A2E45A /* ImageLoaderImpl.swift */; };
 		B069C5117FD96F739A1DA8BE /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C37C41F8A6733DD66B1C /* ImageLoader.swift */; };
 		B069C511EC471F61F3CC24DB /* RedditEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C9D24A33155894AACCF0 /* RedditEntryModel.swift */; };
 		B069C523F14771C7C5699DEA /* NewsItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B069C2675F1FCED15862F8B0 /* NewsItemCell.xib */; };
+		B069C5599A4E716FF9420CE6 /* ListingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C240E8856FDE8FF708A5 /* ListingParameters.swift */; };
 		B069C56FD2207C0E0AD46B18 /* NewsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C60DEB08C1A42BA8636D /* NewsListPresenter.swift */; };
 		B069C5C1C0CBDE4496E31A27 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C11AF82BA0BE10144E4A /* NewsListViewModel.swift */; };
+		B069C5EFD2ED962CE86E3759 /* RedditAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C5474A7049FBCE8863E1 /* RedditAPIClient.swift */; };
 		B069C63D9EC2545983C92CC3 /* ModulesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CF21A652A71C1957AED8 /* ModulesAssembly.swift */; };
 		B069C640B5D49DECFF0F037E /* UICollectionViewCell+Autosizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CB27256A6A86BB276CE8 /* UICollectionViewCell+Autosizing.swift */; };
 		B069C64D0EE9A2656379FCFF /* NewsListPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C60411BCA0C1B3DA8A31 /* NewsListPresenterImpl.swift */; };
@@ -99,6 +103,7 @@
 		B069C1D692406B14B2FAEAFE /* NewsListCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListCollectionDelegate.swift; sourceTree = "<group>"; };
 		B069C1FEAF802A82EBAAC557 /* APIAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIAssembly.swift; sourceTree = "<group>"; };
 		B069C21A20C78F7B9ED38B3F /* UtilsAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsAssembly.swift; sourceTree = "<group>"; };
+		B069C240E8856FDE8FF708A5 /* ListingParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingParameters.swift; sourceTree = "<group>"; };
 		B069C2675F1FCED15862F8B0 /* NewsItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsItemCell.xib; sourceTree = "<group>"; };
 		B069C2D6B91577E808579B7D /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		B069C2D765AB4EC1F0FF2F86 /* Convertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
@@ -108,6 +113,7 @@
 		B069C3C42AFBCE44BB37A159 /* LoadMoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
 		B069C4A943F2100C2E3373AF /* NewsListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListService.swift; sourceTree = "<group>"; };
 		B069C4F4185DB38F9203A8F3 /* NewsListCollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListCollectionDataSource.swift; sourceTree = "<group>"; };
+		B069C5474A7049FBCE8863E1 /* RedditAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditAPIClient.swift; sourceTree = "<group>"; };
 		B069C550D6B14B20E8E87055 /* NewsListViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewState.swift; sourceTree = "<group>"; };
 		B069C57044EABACE0FD62F72 /* ImageCacheImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheImpl.swift; sourceTree = "<group>"; };
 		B069C60411BCA0C1B3DA8A31 /* NewsListPresenterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListPresenterImpl.swift; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 		B069C68505A5C9D4825EE5B3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B069C68601D012A86C1C5485 /* NewsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		B069C68B8A01F82D1E52122E /* ImageLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoadableView.swift; sourceTree = "<group>"; };
+		B069C6D3D3BCB7EA31665FDB /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		B069C6F329121C106F573CDA /* NewsListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListInteractor.swift; sourceTree = "<group>"; };
 		B069C72C47E878314B32FC41 /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		B069C746F2919D241E1461C1 /* NewsItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +146,7 @@
 		B069CE0974661AFAF5B4D81F /* NewsListInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListInteractorImpl.swift; sourceTree = "<group>"; };
 		B069CE9F352E1DB1B7528E64 /* NewsListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsListViewController.storyboard; sourceTree = "<group>"; };
 		B069CEE3107E3125FFDEF83E /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
+		B069CEE55AC4CB5F1EC5F80E /* RedditAPIClientImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditAPIClientImpl.swift; sourceTree = "<group>"; };
 		B069CF146A5BB665F75288FB /* ImageLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoadable.swift; sourceTree = "<group>"; };
 		B069CF21A652A71C1957AED8 /* ModulesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModulesAssembly.swift; sourceTree = "<group>"; };
 		B069CFC2FC275CD62524919A /* NewsListCollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListCollectionModel.swift; sourceTree = "<group>"; };
@@ -430,6 +438,7 @@
 				B069CCD4273ADB06CCB892D3 /* RedditThumbnailModel.swift */,
 				B069C37E1DFCCDC5926BE921 /* RedditImageModel.swift */,
 				B069C87B0B883D34A3F9DAD4 /* EntryListResponse.swift */,
+				B069CEA653818B6EBD161E67 /* Requests */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -451,6 +460,9 @@
 			children = (
 				B069C97A70F28730C7289DBC /* Models */,
 				B069C75BA06102B522844C25 /* Mapping */,
+				B069C5474A7049FBCE8863E1 /* RedditAPIClient.swift */,
+				B069CEE55AC4CB5F1EC5F80E /* RedditAPIClientImpl.swift */,
+				B069CDC31207FB58AFAC94B8 /* RequestBuilder */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -487,6 +499,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		B069CDC31207FB58AFAC94B8 /* RequestBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				B069C6D3D3BCB7EA31665FDB /* RequestBuilder.swift */,
+			);
+			path = RequestBuilder;
+			sourceTree = "<group>";
+		};
 		B069CE0B97DE0F332C92777E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +535,14 @@
 				B069C21A20C78F7B9ED38B3F /* UtilsAssembly.swift */,
 			);
 			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		B069CEA653818B6EBD161E67 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				B069C240E8856FDE8FF708A5 /* ListingParameters.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		B069CF6E92E5EFC6D7417696 /* Presenter */ = {
@@ -744,6 +772,10 @@
 				B069C1E4EBE90DC697DA0FA8 /* EntryListResponse.swift in Sources */,
 				B069C9631210EA8D32A81270 /* NewsListServiceImpl.swift in Sources */,
 				B069CE1796A7D63875045485 /* DateFormatter.swift in Sources */,
+				B069C5EFD2ED962CE86E3759 /* RedditAPIClient.swift in Sources */,
+				B069C0A0A67834AA92545247 /* RedditAPIClientImpl.swift in Sources */,
+				B069C2D8014C379EE7416107 /* RequestBuilder.swift in Sources */,
+				B069C5599A4E716FF9420CE6 /* ListingParameters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

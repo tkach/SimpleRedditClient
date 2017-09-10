@@ -24,6 +24,9 @@ class RedditEntryModelParsingTests: XCTestCase {
         result = try! RedditEntryModel(map: map)
     }
     
+    func testShouldParseNameCorrectly() {
+        XCTAssertEqual(result.name, "x9993")
+    }
     
     func testShouldParseTitleCorrectly() {
         XCTAssertEqual(result.title, "I am test title")

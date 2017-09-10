@@ -15,4 +15,5 @@ enum NetworkResult<T> {
 
 protocol NewsListService {
     func loadNewsList(completion: @escaping (NetworkResult<EntriesListResponse>) -> ())
+    func loadNextNewsList(completion: @escaping (NetworkResult<EntriesListResponse>) -> ())
 }

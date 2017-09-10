@@ -5,11 +5,18 @@
 import UIKit
 
 final class ModulesAssembly {
+
+    let apiClient: RedditAPIClient
+
     //injectable, please see AppAssembly
     var router: AppRouter!
 
+    init(apiClient: RedditAPIClient) {
+        self.apiClient = apiClient
+    }
+
     private lazy var newsListAssembly: NewsListAssembly = {
-        NewsListAssembly(router: self.router)
+        NewsListAssembly(router: self.router, apiClient: self.apiClient)
     }()
 
     private lazy var newsItemAssembly: NewsItemAssembly = {
