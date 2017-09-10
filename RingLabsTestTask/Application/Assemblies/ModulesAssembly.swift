@@ -20,7 +20,7 @@ final class ModulesAssembly {
         return newsListAssembly.build()
     }
 
-    func newsItemDetailsViewController() -> UIViewController {
-        return newsItemAssembly.build()
+    func newsItemDetailsViewController(with item: NewsItem) -> UIViewController {
+        return newsItemAssembly.build(with: item)
     }
 }

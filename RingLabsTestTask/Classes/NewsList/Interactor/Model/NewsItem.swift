@@ -10,5 +10,6 @@ struct NewsItem {
     let comments: Int
     let date: Date
     
-    let thumbnailUrlString: String?
+    let thumbnailUrl: URL?
+    let originalUrl: URL?
 }

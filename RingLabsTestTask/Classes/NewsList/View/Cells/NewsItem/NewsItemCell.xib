@@ -51,18 +51,15 @@ sdffsd</string>
                                 <rect key="frame" x="0.0" y="0.0" width="287" height="120"/>
                                 <color key="backgroundColor" red="0.86244612070000004" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-NZ-f6D">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-NZ-f6D">
                                 <rect key="frame" x="0.0" y="-0.5" width="287" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="120" id="BXQ-zY-Drk"/>
                             <constraint firstAttribute="trailing" secondItem="BWd-NZ-f6D" secondAttribute="trailing" id="MpP-nh-wpl"/>
+                            <constraint firstAttribute="height" constant="120" id="OLm-2j-b23"/>
                             <constraint firstAttribute="trailing" secondItem="N2u-0f-MFS" secondAttribute="trailing" id="VTG-uM-Hwc"/>
                             <constraint firstAttribute="bottom" secondItem="BWd-NZ-f6D" secondAttribute="bottom" id="WgC-vt-Zbl"/>
                             <constraint firstItem="BWd-NZ-f6D" firstAttribute="leading" secondItem="p9h-3d-2sN" secondAttribute="leading" id="XrR-DR-83g"/>
@@ -104,7 +101,7 @@ sdffsd</string>
                 <outlet property="posterView" destination="p9h-3d-2sN" id="Uwm-Zc-e8Z"/>
                 <outlet property="titleLabel" destination="RNF-u3-v1B" id="dcb-7w-l8l"/>
             </connections>
-            <point key="canvasLocation" x="-157" y="-154"/>
+            <point key="canvasLocation" x="-147" y="-214"/>
         </collectionViewCell>
     </objects>
 </document>

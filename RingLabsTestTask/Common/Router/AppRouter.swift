@@ -20,8 +20,8 @@ final class AppRouter {
 }
 
 extension AppRouter: NewsListRouter {
-    func route(to: NewsItem) {
-        let controller = controllersAssembly.newsItemDetailsViewController()
+    func route(to item: NewsItem) {
+        let controller = controllersAssembly.newsItemDetailsViewController(with: item)
         navigationController.pushViewController(controller, animated: true)
     }
 }

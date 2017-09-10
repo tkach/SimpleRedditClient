@@ -22,10 +22,34 @@ final class NewsListInteractorImpl {
         return array.map {
             let representation = $0 as! [String: Any]
             let postDict = representation["data"] as! [String: Any]
+            var imageSource: String? = nil
+            if let image = postDict["preview"] as? [String: Any] {
+                if let img = image["images"] as? [[String: Any]] {
+                    if let first = img.first as? [String: Any] {
+                        if let source = first["source"] as? [String: Any] {
+                            if let sourceString = source["url"] {
+                                imageSource = sourceString as? String
+                            }
+                        }
+                    }
+                }
+            }
+            
+            let thumbnailURL: URL? = (postDict["thumbnail"] as? String).map {
+                _urlstring in
+                return URL(string: _urlstring)
+            } ?? nil
+            let originalURL: URL? = imageSource.map {
+                _urlstring in
+                URL(string: _urlstring)
+            } ?? nil
+            
             return NewsItem(title: postDict["title"] as! String,
                             author: postDict["author"] as! String,
-                            comments: 0, date: Date(),
-                            thumbnailUrlString: postDict["thumbnail"] as? String)
+                            comments: 0,
+                            date: Date(),
+                            thumbnailUrl: thumbnailURL,
+                            originalUrl: originalURL)
         }
     }
 }

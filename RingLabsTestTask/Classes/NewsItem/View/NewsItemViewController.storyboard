@@ -33,7 +33,7 @@ loading is in progress</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w5F-Jh-HMf">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w5F-Jh-HMf">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="647"/>
                                     </imageView>
                                 </subviews>
@@ -60,6 +60,9 @@ loading is in progress</string>
                             <constraint firstItem="tzt-pD-a6X" firstAttribute="top" secondItem="5e9-Oq-Uko" secondAttribute="bottom" id="yOS-JJ-i0w"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="posterView" destination="tzt-pD-a6X" id="D55-QN-CQZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FaW-BL-9Wy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

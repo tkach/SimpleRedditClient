@@ -23,7 +23,6 @@ final class NewsItemCell: UICollectionViewCell {
         super.prepareForReuse()
         posterView.prepareForReuse()
     }
-
 }
 
 extension NewsItemCell: UpdatableCell {
@@ -31,8 +30,13 @@ extension NewsItemCell: UpdatableCell {
         titleLabel.text = item.title
         authorLabel.text = "posted by \(item.author)"
         commentsLabel.text = "\(item.comments) comments"
+//        posterAspect.isActive = false
         
-        let url: URL? = item.thumbnailUrlString.map { $0.contains("https") ? URL(string: $0) : nil } ?? nil
-        posterView.load(imageURL: url)
+//        posterView.removeConstraint(posterAspect)
+//        posterAspect = NSLayoutConstraint(item: posterView, attribute: .height, relatedBy: .equal, toItem: posterView, attribute: .width, multiplier: 0.1, constant: 0)
+//        posterView.addConstraint(posterAspect)
+        
+//        let url: URL? = item.thumbnailUrlString.map { $0.contains("https") ? URL(string: $0) : nil } ?? nil
+        posterView.load(imageURL: item.thumbnailUrl)
     }
 }

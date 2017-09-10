@@ -5,8 +5,9 @@
 import UIKit
 
 final class NewsItemAssembly {
-    func build() -> UIViewController {
+    func build(with: NewsItem) -> UIViewController {
         let controller = NewsItemViewController.fromStoryboard()
+        controller.newsItem = with
 //        let interactor = NewsListInteractorImpl()
 //        let presenter = NewsListPresenterImpl(view: controller, interactor: interactor, router: router)
 //        controller.presenter = presenter
