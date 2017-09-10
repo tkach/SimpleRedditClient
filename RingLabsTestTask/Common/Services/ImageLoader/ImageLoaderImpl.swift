@@ -5,21 +5,34 @@
 import UIKit
 
 final class ImageLoaderImpl {
+    fileprivate let cache: ImageCache
     
+    init(cache: ImageCache) {
+        self.cache = cache
+    }
 }
 
 extension ImageLoaderImpl: ImageLoader {
     func load(with url: URL, into: ImageTarget? = nil, completion: @escaping (ImageLoadingResult) -> ()) {
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
-            DispatchQueue.main.async {
-                if let data = data, let image = UIImage(data: data) {
-                    completion(.success(image))
-                }
-                else {
-                    completion(.failure)
+        DispatchQueue.global(qos: .background).async {
+            if let cached = self.cache.image(forUrl: url) {
+                DispatchQueue.main.async {
+                    completion(.success(cached))
                 }
             }
-        }.resume()
-
+            else {
+                URLSession.shared.dataTask(with: url) { (data, _, error) in
+                    DispatchQueue.main.async {
+                        if let data = data, let image = UIImage(data: data) {
+                            self.cache.set(image: image, forUrl: url)
+                            completion(.success(image))
+                        }
+                        else {
+                            completion(.failure)
+                        }
+                    }
+                    }.resume()
+            }
+        }
     }
 }

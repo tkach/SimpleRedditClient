@@ -2,13 +2,14 @@
 // Created by Alexander Tkachenko on 9/10/17.
 //
 
-import Foundation
+import UIKit
 
 final class UtilsAssembly {
     private (set) var imageLoader: ImageLoader
 
 
     init() {
-        imageLoader = ImageLoaderImpl()
+        let cache = ImageCacheImpl(cache: NSCache<NSString, UIImage>())
+        imageLoader = ImageLoaderImpl(cache: cache)
     }
 }

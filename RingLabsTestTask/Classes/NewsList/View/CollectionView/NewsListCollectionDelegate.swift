@@ -62,8 +62,8 @@ extension NewsListCollectionDelegate: UICollectionViewDelegateFlowLayout {
     }
 
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let model = model else { return }
-        if (model.count > 0 && needToTriggerLoadMore(scrollView: scrollView) && !model.loadMoreInProgress) {
+        guard let model = model, model.count > 0, !model.loadMoreInProgress else { return }
+        if (needToTriggerLoadMore(scrollView: scrollView)) {
             model.loadMoreInProgress = true
             actionsDelegate?.onLoadMore()
         }
@@ -76,10 +76,13 @@ extension NewsListCollectionDelegate: UICollectionViewDelegateFlowLayout {
 
     public func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         let cellModel = model?.cellModel(atIndexPath: indexPath)
-        if let cellModel = cellModel as? LoadMoreModel, cellModel.state != .failed {
-            return false
+        if let model = cellModel as? LoadMoreModel {
+            return model.state == .failed
         }
-        return true
+        else if let model = cellModel as? NewsItem {
+            return model.originalUrl != nil
+        }
+        return false
     }
 
 
@@ -93,5 +96,4 @@ extension NewsListCollectionDelegate: UICollectionViewDelegateFlowLayout {
             model?.loadMoreInProgress = true
         }
     }
-
 }

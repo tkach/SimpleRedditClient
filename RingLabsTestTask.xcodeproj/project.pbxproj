@@ -36,6 +36,7 @@
 		B069C9D9777BFFA65E511D35 /* NewsListInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CE0974661AFAF5B4D81F /* NewsListInteractorImpl.swift */; };
 		B069CAA2AD05B96ECA2E5DD2 /* APIAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C1FEAF802A82EBAAC557 /* APIAssembly.swift */; };
 		B069CB82C33D44AE0472FBF2 /* NewsListViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C550D6B14B20E8E87055 /* NewsListViewState.swift */; };
+		B069CBEC26C00F599ED3AB45 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C1781AF16FAFDA6F6DDD /* ImageCache.swift */; };
 		B069CC8155CD1540FEA30D1F /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CEE3107E3125FFDEF83E /* UIViewController+Storyboard.swift */; };
 		B069CD26A11CD4A5D5631435 /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C6473547B24D7A369C8F /* NewsListView.swift */; };
 		B069CD2ED8D111AE337D3058 /* NewsItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C85E9247F1ED464A6CF5 /* NewsItemCell.swift */; };
@@ -43,6 +44,7 @@
 		B069CDC6B8ECB3BB6E0D5251 /* NewsListCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CFC2FC275CD62524919A /* NewsListCollectionModel.swift */; };
 		B069CDED7603B1053CC06722 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C3C42AFBCE44BB37A159 /* LoadMoreCell.swift */; };
 		B069CE2E88A7E667A0D69FC1 /* LoadMoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CB5FE4F7F695856487FB /* LoadMoreModel.swift */; };
+		B069CEAA56C49FFD12622AD0 /* ImageCacheImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C57044EABACE0FD62F72 /* ImageCacheImpl.swift */; };
 		B069CF0B5C468EEAF41AA286 /* NewsListCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C1D692406B14B2FAEAFE /* NewsListCollectionDelegate.swift */; };
 		B069CF334F59034310E3E1F2 /* NewsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C93BD2C555E5C41F6643 /* NewsListRouter.swift */; };
 		B5A77F571F64A211002B503B /* LoadMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A77F561F64A211002B503B /* LoadMoreCell.xib */; };
@@ -56,6 +58,7 @@
 		B069C00AD965906E8103C2A6 /* NewsItemAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemAssembly.swift; sourceTree = "<group>"; };
 		B069C10539C13AB0A2B5D23E /* AppAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		B069C11AF82BA0BE10144E4A /* NewsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
+		B069C1781AF16FAFDA6F6DDD /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		B069C1C4FD10720AD45DD8DC /* UpdatableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatableCell.swift; sourceTree = "<group>"; };
 		B069C1D692406B14B2FAEAFE /* NewsListCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListCollectionDelegate.swift; sourceTree = "<group>"; };
 		B069C1FEAF802A82EBAAC557 /* APIAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIAssembly.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		B069C3C42AFBCE44BB37A159 /* LoadMoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
 		B069C4F4185DB38F9203A8F3 /* NewsListCollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListCollectionDataSource.swift; sourceTree = "<group>"; };
 		B069C550D6B14B20E8E87055 /* NewsListViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewState.swift; sourceTree = "<group>"; };
+		B069C57044EABACE0FD62F72 /* ImageCacheImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheImpl.swift; sourceTree = "<group>"; };
 		B069C60411BCA0C1B3DA8A31 /* NewsListPresenterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListPresenterImpl.swift; sourceTree = "<group>"; };
 		B069C60DEB08C1A42BA8636D /* NewsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListPresenter.swift; sourceTree = "<group>"; };
 		B069C62D22E17C471DA3910F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RingLabsTestTask/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
@@ -123,6 +127,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		B069C0452C6E1FE9C3F6BE79 /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				B069C1781AF16FAFDA6F6DDD /* ImageCache.swift */,
+				B069C57044EABACE0FD62F72 /* ImageCacheImpl.swift */,
+			);
+			path = ImageCache;
+			sourceTree = "<group>";
+		};
 		B069C09E7DFB957524608A4E /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				B069C20C60BEACAB786D5320 /* ImageLoader */,
+				B069C0452C6E1FE9C3F6BE79 /* ImageCache */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -538,6 +552,8 @@
 				B069C44ED486872E960459C6 /* NewsItemAssembly.swift in Sources */,
 				B069C106360CE4EC7B0AD7A9 /* NewsItemViewController.swift in Sources */,
 				B069C7A5A993CD3A82B5091C /* NewsListCellHeightsCache.swift in Sources */,
+				B069CBEC26C00F599ED3AB45 /* ImageCache.swift in Sources */,
+				B069CEAA56C49FFD12622AD0 /* ImageCacheImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
