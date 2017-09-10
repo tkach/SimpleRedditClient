@@ -21,10 +21,14 @@ final class NewsItemViewController: UIViewController {
         )
     }
 
-    @objc func onShare() {
+    @objc func onShare(item: UIBarButtonItem) {
         if let image = posterView.imageView.image {
-            let vc = UIActivityViewController(activityItems: [image, url],
+            let vc = UIActivityViewController(activityItems: [image],
                                               applicationActivities: nil)
+            if let popoverController = vc.popoverPresentationController {
+                popoverController.barButtonItem = item
+                popoverController.permittedArrowDirections = .up
+            }
             present(vc, animated: true)
         }
     }

@@ -54,6 +54,7 @@ class NewsListViewController: UIViewController {
     }
     
     private func rememberCurrentVisibleCell() {
+        guard isViewLoaded else { return }
         collectionDelegate.centeredIndexPath = collectionView.indexPathForVisibleItemAtCenter
     }
 }

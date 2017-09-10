@@ -16,7 +16,10 @@ final class NewsItemCell: UICollectionViewCell {
     @IBOutlet weak var posterHeight: NSLayoutConstraint!
     @IBOutlet weak var posterWidth: NSLayoutConstraint!
     
-    let originalAspect: CGFloat = 1
+    fileprivate let originalAspect: CGFloat = 0.2
+
+    //injectable from NewsListDataSource
+    var dateFormatter: DateFormatter!
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -31,23 +34,36 @@ final class NewsItemCell: UICollectionViewCell {
 extension NewsItemCell: UpdatableCell {
     func update(with item: NewsItem) {
         titleLabel.text = item.title
-        authorLabel.text = "posted by \(item.author)"
-        commentsLabel.text = "\(item.comments) comments"
-        
-        
-//        posterAspect.isActive = false
-        
-//        posterView.removeConstraint(posterAspect)
-//        posterAspect = NSLayoutConstraint(item: posterView, attribute: .height, relatedBy: .equal, toItem: posterView, attribute: .width, multiplier: 0.1, constant: 0)
-//        posterView.addConstraint(posterAspect)
-        
-//        let url: URL? = item.thumbnailUrlString.map { $0.contains("https") ? URL(string: $0) : nil } ?? nil
+        authorLabel.text = formattedAuthor(author: item.author)
+        commentsLabel.text = formattedComments(count: item.comments)
+        dateLabel.text = formattedDate(date: item.date)
+
         posterView.load(imageURL: item.thumbnailUrl)
+        
         if (item.thumbnailAspect > 0) {
             posterWidth.constant = posterHeight.constant * item.thumbnailAspect
         }
         else {
             posterWidth.constant = posterHeight.constant * originalAspect
         }
+    }
+}
+
+private extension NewsItemCell {
+    func formattedAuthor(author: String) -> String {
+        let result = "posted by \(author)"
+        return result
+    }
+    
+    func formattedComments(count: Int) -> String {
+        let countString = count > 0 ? "\(count) " : ""
+        let result = countString + "comments".pluralizedFormat(count)
+        return result
+    }
+
+    func formattedDate(date: Date) -> String {
+        guard let dateFormatter = dateFormatter else { return "9 h ago" }
+        let result = dateFormatter.formattedDate(date: date)
+        return result
     }
 }

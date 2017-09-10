@@ -6,6 +6,7 @@ import UIKit
 
 final class NewsListCollectionDataSource: NSObject {
     fileprivate let model: NewsListCollectionModel
+    fileprivate let dateFormatter = DateFormatter()
 
     init(model: NewsListCollectionModel) {
         self.model = model
@@ -39,6 +40,7 @@ extension NewsListCollectionDataSource: UICollectionViewDataSource {
 
         if let cell = cell as? NewsItemCell,
            let model = cellModel as? NewsItem {
+            cell.dateFormatter = dateFormatter
             cell.update(with: model)
         }
         else if let cell = cell as? LoadMoreCell,

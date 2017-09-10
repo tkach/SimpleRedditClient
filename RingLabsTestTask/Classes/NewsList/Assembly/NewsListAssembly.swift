@@ -11,8 +11,9 @@ final class NewsListAssembly {
     }
 
     func build() -> UIViewController {
+        let newsListService = NewsListServiceImpl()
         let controller = NewsListViewController.fromStoryboard()
-        let interactor = NewsListInteractorImpl()
+        let interactor = NewsListInteractorImpl(newsListService: newsListService)
         let presenter = NewsListPresenterImpl(view: controller, interactor: interactor, router: router)
         controller.presenter = presenter
         interactor.output = presenter
