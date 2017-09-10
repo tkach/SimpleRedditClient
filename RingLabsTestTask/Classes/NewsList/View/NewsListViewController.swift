@@ -9,7 +9,6 @@
 import UIKit
 
 class NewsListViewController: UIViewController {
-    //injectable
     var presenter: NewsListPresenter!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -36,9 +35,12 @@ class NewsListViewController: UIViewController {
         let collectionModel = NewsListCollectionModel()
         collectionDelegate = NewsListCollectionDelegate(actionsDelegate: self)
         collectionDataSource = NewsListCollectionDataSource(model: collectionModel)
+        
         collectionDataSource.registerCell(cell: NewsItemCell.self) {
-            nib, identifier in
-            collectionView.register(nib, forCellWithReuseIdentifier: identifier)
+            collectionView.register($0, forCellWithReuseIdentifier: $1)
+        }
+        collectionDataSource.registerCell(cell: LoadMoreCell.self) {
+            collectionView.register($0, forCellWithReuseIdentifier: $1)
         }
         collectionDelegate.model = collectionModel
         collectionView.delegate = collectionDelegate
@@ -75,12 +77,24 @@ extension NewsListViewController: NewsListView {
             activityIndicator.isHidden = true
             collectionDataSource.update(with: model)
             collectionView.reloadData()
+        case .loadedNext(let model):
+            errorView.isHidden = true
+            activityIndicator.isHidden = true
+            collectionDataSource.update(with: model)
+            collectionView.reloadData()
         }
     }
 }
 
-extension NewsListViewController: NewsListActionsDelegate {
+extension NewsListViewController: NewsListCollectionActionsDelegate {
     func on(newsItem: NewsItem) {
         print("on \(newsItem.title)")
+    }
+    
+    func onLoadMore() {
+        print("on loadmore")
+        presenter.didScrollToEnd()
+        collectionDataSource.onLoadMore()
+        collectionView.reloadData()
     }
 }

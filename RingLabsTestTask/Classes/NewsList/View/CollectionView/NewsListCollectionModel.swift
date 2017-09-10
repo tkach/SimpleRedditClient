@@ -11,9 +11,22 @@ protocol CollectionModel {
 
 final class NewsListCollectionModel: CollectionModel {
     fileprivate var cellModels: [CellModel] = []
+    var loadMoreInProgress: Bool = false {
+        didSet {
+            if let loadMoreModel = cellModels.last as? LoadMoreModel {
+                loadMoreModel.state = loadMoreInProgress ? .loading : .failed
+            }
+        }
+    }
 
     func rebuild(with model: NewsListViewModel) {
+        loadMoreInProgress = model.loadMoreFailed == true
         cellModels = model.newsItemsLoaded
+        if (model.hasMore) {
+            let state: LoadMoreState = model.loadMoreFailed ? .failed : .loading
+            let loadMore = LoadMoreModel(state: state)
+            cellModels.append(loadMore)
+        }
     }
 
     var count: Int {

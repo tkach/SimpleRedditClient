@@ -6,6 +6,7 @@ import Foundation
 
 final class NewsListInteractorImpl {
     weak var output: NewsListInteractorOutput?
+    fileprivate var loadedItems: [NewsItem] = []
     
     init() {
     }
@@ -29,20 +30,42 @@ final class NewsListInteractorImpl {
     }
 }
 
-private var fetchCounts: Int = 2
+private var fetchCounts: Int = 0
 
 extension NewsListInteractorImpl: NewsListInteractorInput {
     func fetchNewsList() {
+//        if (fetchCounts < 2) {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                self.output?.didFail(error: NewsListError(text: "Test failure"))
+//            }
+//            fetchCounts += 1
+//        }
+//        else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                let items = self.testItems()
+                self.loadedItems.append(contentsOf: items)
+                self.output?.didLoad(news: self.loadedItems)
+            }
+//        }
+    }
+    
+    func fetchNextItems() {
         if (fetchCounts < 2) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.output?.didFail(error: NewsListError(text: "Test failure"))
+//                let items = self.testItems()
+//                self.loadedItems.append(contentsOf: items)
+                self.output?.didFailLoadingNext(error: NewsListError(text: "fff"))
             }
-            fetchCounts += 1
         }
         else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.output?.didLoad(news: self.testItems())
+                let items = self.testItems()
+                self.loadedItems.append(contentsOf: items)
+                self.output?.didLoadNext(news: self.loadedItems)
             }
         }
+        fetchCounts += 1
+        
+        
     }
 }

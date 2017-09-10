@@ -6,4 +6,6 @@ import Foundation
 
 struct NewsListViewModel {
     let newsItemsLoaded: [NewsItem]
+    let hasMore: Bool
+    let loadMoreFailed: Bool
 }

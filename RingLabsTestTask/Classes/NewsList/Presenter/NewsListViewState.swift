@@ -12,4 +12,5 @@ enum NewsListViewState {
     case loading
     case failed(NewsListError)
     case loaded(NewsListViewModel)
+    case loadedNext(NewsListViewModel)
 }

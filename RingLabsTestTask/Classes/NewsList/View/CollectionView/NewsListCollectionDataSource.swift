@@ -21,6 +21,10 @@ final class NewsListCollectionDataSource: NSObject {
     func update(with vm: NewsListViewModel) {
         model.rebuild(with: vm)
     }
+    
+    func onLoadMore() {
+        model.loadMoreInProgress = true
+    }
 }
 
 extension NewsListCollectionDataSource: UICollectionViewDataSource {
@@ -37,7 +41,10 @@ extension NewsListCollectionDataSource: UICollectionViewDataSource {
         if let cell = cell as? NewsItemCell,
            let model = cellModel as? NewsItem {
             cell.update(with: model)
-            
+        }
+        else if let cell = cell as? LoadMoreCell,
+                let model = cellModel as? LoadMoreModel {
+            cell.update(with: model)
         }
         else {
             fatalError("Cell is created but not updated because type of cell and model is not listed in the cases above")

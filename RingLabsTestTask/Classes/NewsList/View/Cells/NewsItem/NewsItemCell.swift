@@ -23,6 +23,12 @@ final class NewsItemCell: UICollectionViewCell {
     override var isHighlighted: Bool {
         didSet { contentView.alpha = isHighlighted ? 0.5 : 1 }
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        posterView.prepareForReuse()
+    }
+
 }
 
 extension NewsItemCell: UpdatableCell {
@@ -32,8 +38,6 @@ extension NewsItemCell: UpdatableCell {
         commentsLabel.text = "\(item.comments) comments"
         
         let url: URL? = item.thumbnailUrlString.map { $0.contains("https") ? URL(string: $0) : nil } ?? nil
-//        posterAspect.constant = url != nil ? item.thumbnailImageProportion : 287.0 / 120.0
-        print("poster aspect: \(posterAspect.constant)")
         posterView.load(imageURL: url)
     }
 }

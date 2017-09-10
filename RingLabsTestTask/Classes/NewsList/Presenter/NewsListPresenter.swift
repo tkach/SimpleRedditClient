@@ -10,4 +10,5 @@ protocol NewsListPresenter {
     func didSelectPost()
     func didShowLastPost()
     func didTapRetryLoading()
+    func didScrollToEnd()
 }

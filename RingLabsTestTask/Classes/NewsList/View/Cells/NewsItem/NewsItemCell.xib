@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -62,7 +61,7 @@ sdffsd</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="p9h-3d-2sN" secondAttribute="height" multiplier="287:120" id="Abh-Df-c0v"/>
+                            <constraint firstAttribute="height" constant="120" id="BXQ-zY-Drk"/>
                             <constraint firstAttribute="trailing" secondItem="BWd-NZ-f6D" secondAttribute="trailing" id="MpP-nh-wpl"/>
                             <constraint firstAttribute="trailing" secondItem="N2u-0f-MFS" secondAttribute="trailing" id="VTG-uM-Hwc"/>
                             <constraint firstAttribute="bottom" secondItem="BWd-NZ-f6D" secondAttribute="bottom" id="WgC-vt-Zbl"/>
@@ -72,6 +71,9 @@ sdffsd</string>
                             <constraint firstItem="N2u-0f-MFS" firstAttribute="top" secondItem="p9h-3d-2sN" secondAttribute="top" id="x1U-PX-7ry"/>
                             <constraint firstAttribute="bottom" secondItem="N2u-0f-MFS" secondAttribute="bottom" id="x3K-xQ-623"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="animated" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="imageView" destination="BWd-NZ-f6D" id="avC-Ul-ttB"/>
                             <outlet property="placeholderView" destination="N2u-0f-MFS" id="XbY-aP-v6j"/>
@@ -99,7 +101,6 @@ sdffsd</string>
                 <outlet property="authorLabel" destination="Mvo-l1-oOo" id="nkJ-pW-Q8E"/>
                 <outlet property="commentsLabel" destination="AXX-1y-boX" id="OJS-2U-dfa"/>
                 <outlet property="dateLabel" destination="KBx-hy-9zf" id="r4L-Bi-TNK"/>
-                <outlet property="posterAspect" destination="Abh-Df-c0v" id="VgJ-ZX-U9P"/>
                 <outlet property="posterView" destination="p9h-3d-2sN" id="Uwm-Zc-e8Z"/>
                 <outlet property="titleLabel" destination="RNF-u3-v1B" id="dcb-7w-l8l"/>
             </connections>
