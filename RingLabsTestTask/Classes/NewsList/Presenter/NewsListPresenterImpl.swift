@@ -28,14 +28,9 @@ extension NewsListPresenterImpl: NewsListPresenter {
         router.route(to: item)
     }
 
-    func didShowLastPost() {
-        print("did show last post")
-    }
-
     func didTapRetryLoading() {
         interactor.fetchNewsList()
         view.update(with: .loading)
-        print("did tap retry loading")
     }
     
     func didScrollToEnd() {

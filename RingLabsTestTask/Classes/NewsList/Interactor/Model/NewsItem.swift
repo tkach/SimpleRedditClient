@@ -11,5 +11,6 @@ struct NewsItem {
     let date: Date
     
     let thumbnailUrl: URL?
+    let thumbnailAspect: CGFloat
     let originalUrl: URL?
 }

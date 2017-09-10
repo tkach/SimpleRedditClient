@@ -8,7 +8,6 @@ protocol NewsListPresenter {
     func viewLoaded()
     
     func didSelect(item: NewsItem)
-    func didShowLastPost()
     func didTapRetryLoading()
     func didScrollToEnd()
 }

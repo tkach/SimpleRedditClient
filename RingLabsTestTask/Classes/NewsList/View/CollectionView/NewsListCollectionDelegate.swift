@@ -1,4 +1,4 @@
-//
+///Users/design/Documents/Projects/RingLabsTestTask/RingLabsTestTask/Classes
 // Created by Alexander Tkachenko on 9/9/17.
 //
 
@@ -13,6 +13,12 @@ final class NewsListCollectionDelegate: NSObject {
     fileprivate weak var actionsDelegate: NewsListCollectionActionsDelegate?
     weak var model: NewsListCollectionModel?
     var centeredIndexPath: IndexPath?
+    fileprivate let heightsCache = NewsListCellHeightsCache()
+    
+    fileprivate lazy var tempNewsCell: NewsItemCell = {
+        NewsItemCell.fromNib()
+    }()
+    
     init(actionsDelegate: NewsListCollectionActionsDelegate) {
         self.actionsDelegate = actionsDelegate
     }
@@ -30,9 +36,18 @@ extension NewsListCollectionDelegate: UICollectionViewDelegateFlowLayout {
         guard let model = model?.cellModel(atIndexPath: indexPath) as? NewsItemCell.Model else {
             return proposedSize
         }
-        let view = NewsItemCell.fromNib()
-        view.update(with: model)
-        return view.systemLayoutSize(fixedWidth: itemWidth)
+        let key = model.title
+        let result: CGSize
+        if let cachedHeight = heightsCache.fetch(for: itemWidth, key: key) {
+            result = CGSize(width: itemWidth, height: cachedHeight)
+        }
+        else {
+            let view = tempNewsCell
+            view.update(with: model)
+            result = view.systemLayoutSize(fixedWidth: itemWidth)
+            heightsCache.store(height: result.height, for: itemWidth, key: key)
+        }
+        return result
     }
 
     public func collectionView(_ collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {

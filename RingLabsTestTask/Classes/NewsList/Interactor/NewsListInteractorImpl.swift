@@ -2,7 +2,7 @@
 // Created by Alexander Tkachenko on 9/9/17.
 //
 
-import Foundation
+import UIKit
 
 final class NewsListInteractorImpl {
     weak var output: NewsListInteractorOutput?
@@ -39,6 +39,14 @@ final class NewsListInteractorImpl {
                 _urlstring in
                 return URL(string: _urlstring)
             } ?? nil
+            let proportion: CGFloat
+            if let width = postDict["thumbnail_width"] as? CGFloat,
+                let height = postDict["thumbnail_height"] as? CGFloat {
+                proportion = width / height
+            }
+            else {
+                proportion = 0
+            }
             let originalURL: URL? = imageSource.map {
                 _urlstring in
                 URL(string: _urlstring)
@@ -49,6 +57,7 @@ final class NewsListInteractorImpl {
                             comments: 0,
                             date: Date(),
                             thumbnailUrl: thumbnailURL,
+                            thumbnailAspect: proportion,
                             originalUrl: originalURL)
         }
     }

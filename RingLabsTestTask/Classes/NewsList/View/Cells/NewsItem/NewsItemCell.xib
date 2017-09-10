@@ -18,22 +18,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="287" height="201.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNF-u3-v1B">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNF-u3-v1B">
                         <rect key="frame" x="0.0" y="120" width="287" height="41"/>
-                        <string key="text">Label
-sdffsd</string>
+                        <string key="text">iPhone 8: Release date, price, 
+latest news and features</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 hours ago" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-hy-9zf" userLabel="Date">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="8 hours ago" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-hy-9zf" userLabel="Date">
                         <rect key="frame" x="0.0" y="183.5" width="82" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submitted by" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvo-l1-oOo" userLabel="Author">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Submitted by" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvo-l1-oOo" userLabel="Author">
                         <rect key="frame" x="0.0" y="160.5" width="102.5" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20.5" id="BOx-ZF-zRV"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -45,14 +48,23 @@ sdffsd</string>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9h-3d-2sN" customClass="ImageLoadableView" customModule="RingLabsTestTask" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="287" height="120"/>
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2u-0f-MFS">
-                                <rect key="frame" x="0.0" y="0.0" width="287" height="120"/>
-                                <color key="backgroundColor" red="0.86244612070000004" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="brU-Rv-rIZ">
+                                        <rect key="frame" x="36" y="36" width="48" height="48"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="brU-Rv-rIZ" firstAttribute="centerX" secondItem="N2u-0f-MFS" secondAttribute="centerX" id="qN3-bX-6OE"/>
+                                    <constraint firstItem="brU-Rv-rIZ" firstAttribute="centerY" secondItem="N2u-0f-MFS" secondAttribute="centerY" id="z72-Px-EWy"/>
+                                </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-NZ-f6D">
-                                <rect key="frame" x="0.0" y="-0.5" width="287" height="120"/>
+                                <rect key="frame" x="0.0" y="-0.5" width="120" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
@@ -65,6 +77,7 @@ sdffsd</string>
                             <constraint firstItem="BWd-NZ-f6D" firstAttribute="leading" secondItem="p9h-3d-2sN" secondAttribute="leading" id="XrR-DR-83g"/>
                             <constraint firstItem="N2u-0f-MFS" firstAttribute="leading" secondItem="p9h-3d-2sN" secondAttribute="leading" id="ahy-gQ-2H7"/>
                             <constraint firstItem="BWd-NZ-f6D" firstAttribute="top" secondItem="p9h-3d-2sN" secondAttribute="top" id="hVz-P7-T9K"/>
+                            <constraint firstAttribute="width" constant="120" id="wgE-H4-gyj"/>
                             <constraint firstItem="N2u-0f-MFS" firstAttribute="top" secondItem="p9h-3d-2sN" secondAttribute="top" id="x1U-PX-7ry"/>
                             <constraint firstAttribute="bottom" secondItem="N2u-0f-MFS" secondAttribute="bottom" id="x3K-xQ-623"/>
                         </constraints>
@@ -83,7 +96,6 @@ sdffsd</string>
                 <constraint firstAttribute="bottom" secondItem="KBx-hy-9zf" secondAttribute="bottom" id="5eF-MD-WK2"/>
                 <constraint firstItem="p9h-3d-2sN" firstAttribute="leading" secondItem="HfF-lN-ti1" secondAttribute="leading" id="8Ce-ye-i5s"/>
                 <constraint firstItem="RNF-u3-v1B" firstAttribute="top" secondItem="p9h-3d-2sN" secondAttribute="bottom" id="Icb-UO-wDl"/>
-                <constraint firstAttribute="trailing" secondItem="p9h-3d-2sN" secondAttribute="trailing" id="djy-1V-JeG"/>
                 <constraint firstItem="p9h-3d-2sN" firstAttribute="top" secondItem="HfF-lN-ti1" secondAttribute="top" id="dvG-Ke-NJb"/>
                 <constraint firstItem="KBx-hy-9zf" firstAttribute="leading" secondItem="HfF-lN-ti1" secondAttribute="leading" id="e1e-Ol-DZK"/>
                 <constraint firstAttribute="trailing" secondItem="AXX-1y-boX" secondAttribute="trailing" id="ikW-59-y40"/>
@@ -98,10 +110,15 @@ sdffsd</string>
                 <outlet property="authorLabel" destination="Mvo-l1-oOo" id="nkJ-pW-Q8E"/>
                 <outlet property="commentsLabel" destination="AXX-1y-boX" id="OJS-2U-dfa"/>
                 <outlet property="dateLabel" destination="KBx-hy-9zf" id="r4L-Bi-TNK"/>
+                <outlet property="posterHeight" destination="OLm-2j-b23" id="Rjs-kM-RSf"/>
                 <outlet property="posterView" destination="p9h-3d-2sN" id="Uwm-Zc-e8Z"/>
+                <outlet property="posterWidth" destination="wgE-H4-gyj" id="lC7-oi-vUp"/>
                 <outlet property="titleLabel" destination="RNF-u3-v1B" id="dcb-7w-l8l"/>
             </connections>
             <point key="canvasLocation" x="-147" y="-214"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="EmptyImage" width="48" height="48"/>
+    </resources>
 </document>
