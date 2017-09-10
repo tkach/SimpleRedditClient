@@ -12,7 +12,15 @@ final class ModulesAssembly {
         NewsListAssembly(router: self.router)
     }()
 
+    private lazy var newsItemAssembly: NewsItemAssembly = {
+        NewsItemAssembly()
+    }()
+
     func newsListViewController() -> UIViewController {
         return newsListAssembly.build()
+    }
+
+    func newsItemDetailsViewController() -> UIViewController {
+        return newsItemAssembly.build()
     }
 }

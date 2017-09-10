@@ -5,5 +5,5 @@
 import Foundation
 
 protocol NewsListRouter: class {
-    
+    func route(to: NewsItem)
 }

@@ -7,7 +7,7 @@ import Foundation
 protocol NewsListPresenter {
     func viewLoaded()
     
-    func didSelectPost()
+    func didSelect(item: NewsItem)
     func didShowLastPost()
     func didTapRetryLoading()
     func didScrollToEnd()

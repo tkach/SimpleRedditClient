@@ -6,11 +6,6 @@ import UIKit
 
 extension NewsItem: CellModel {}
 
-protocol UpdatableCell {
-    associatedtype Model: CellModel
-    func update(with: Model)
-}
-
 final class NewsItemCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
 

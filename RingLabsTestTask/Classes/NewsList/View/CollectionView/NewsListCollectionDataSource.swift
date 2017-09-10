@@ -6,18 +6,16 @@ import UIKit
 
 final class NewsListCollectionDataSource: NSObject {
     fileprivate let model: NewsListCollectionModel
+
     init(model: NewsListCollectionModel) {
         self.model = model
     }
 
-    func registerCell<T>(cell: T.Type, action: (UINib, String) -> ()) where T: UpdatableCell {
-        let cellName = String(describing: cell)
-        let identifier = cell.Model.reuseIdentifier()
-        
-        let nib = UINib(nibName: cellName, bundle: Bundle.main)
-        action(nib, identifier)
+    func registerCells(collectionView: UICollectionView) {
+        registerCell(cell: NewsItemCell.self, collectionView: collectionView)
+        registerCell(cell: LoadMoreCell.self, collectionView: collectionView)
     }
-
+    
     func update(with vm: NewsListViewModel) {
         model.rebuild(with: vm)
     }
@@ -34,6 +32,7 @@ extension NewsListCollectionDataSource: UICollectionViewDataSource {
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellModel = model.cellModel(atIndexPath: indexPath)
+        
         let identifier = cellModel.reuseIdentifier()
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                 for: indexPath)
@@ -52,5 +51,13 @@ extension NewsListCollectionDataSource: UICollectionViewDataSource {
         return cell
 
     }
+}
 
+private extension NewsListCollectionDataSource {
+    func registerCell<T>(cell: T.Type, collectionView: UICollectionView) where T: UpdatableCell, T: UICollectionViewCell {
+        let cellName = String(describing: cell)
+        let identifier = cell.Model.reuseIdentifier()
+        let nib = UINib(nibName: cellName, bundle: Bundle.main)
+        collectionView.register(nib, forCellWithReuseIdentifier: identifier)
+    }
 }

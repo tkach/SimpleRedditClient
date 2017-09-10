@@ -24,8 +24,8 @@ extension NewsListPresenterImpl: NewsListPresenter {
         interactor.fetchNewsList()
     }
 
-    func didSelectPost() {
-        print("did select post")
+    func didSelect(item: NewsItem) {
+        router.route(to: item)
     }
 
     func didShowLastPost() {

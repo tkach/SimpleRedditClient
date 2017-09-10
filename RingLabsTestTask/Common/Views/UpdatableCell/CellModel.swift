@@ -16,5 +16,4 @@ extension CellModel {
     static func reuseIdentifier() -> String {
         return String(describing: self)
     }
-
 }

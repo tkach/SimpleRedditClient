@@ -5,8 +5,8 @@
 import UIKit
 
 final class AppRouter {
-    private let controllersAssembly: ModulesAssembly
-    private lazy var navigationController: UINavigationController = {
+    fileprivate let controllersAssembly: ModulesAssembly
+    fileprivate lazy var navigationController: UINavigationController = {
         return UINavigationController(rootViewController: self.controllersAssembly.newsListViewController())
     }()
 
@@ -20,5 +20,8 @@ final class AppRouter {
 }
 
 extension AppRouter: NewsListRouter {
-    
+    func route(to: NewsItem) {
+        let controller = controllersAssembly.newsItemDetailsViewController()
+        navigationController.pushViewController(controller, animated: true)
+    }
 }

@@ -33,16 +33,12 @@ class NewsListViewController: UIViewController {
 
     private func prepareCollectionView() {
         let collectionModel = NewsListCollectionModel()
-        collectionDelegate = NewsListCollectionDelegate(actionsDelegate: self)
         collectionDataSource = NewsListCollectionDataSource(model: collectionModel)
-        
-        collectionDataSource.registerCell(cell: NewsItemCell.self) {
-            collectionView.register($0, forCellWithReuseIdentifier: $1)
-        }
-        collectionDataSource.registerCell(cell: LoadMoreCell.self) {
-            collectionView.register($0, forCellWithReuseIdentifier: $1)
-        }
+        collectionDataSource.registerCells(collectionView: collectionView)
+
+        collectionDelegate = NewsListCollectionDelegate(actionsDelegate: self)
         collectionDelegate.model = collectionModel
+        
         collectionView.delegate = collectionDelegate
         collectionView.dataSource = collectionDataSource
     }
@@ -67,19 +63,17 @@ extension NewsListViewController: NewsListView {
         switch state {
         case .loading:
             errorView.isHidden = true
-            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
         case .failed(let error):
             errorLabel.text = error.text ?? errorLabel.text
             errorView.isHidden = false
-            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
         case .loaded(let model):
             errorView.isHidden = true
-            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
             collectionDataSource.update(with: model)
             collectionView.reloadData()
         case .loadedNext(let model):
-            errorView.isHidden = true
-            activityIndicator.isHidden = true
             collectionDataSource.update(with: model)
             collectionView.reloadData()
         }
@@ -88,11 +82,10 @@ extension NewsListViewController: NewsListView {
 
 extension NewsListViewController: NewsListCollectionActionsDelegate {
     func on(newsItem: NewsItem) {
-        print("on \(newsItem.title)")
+        presenter.didSelect(item: newsItem)
     }
     
     func onLoadMore() {
-        print("on loadmore")
         presenter.didScrollToEnd()
         collectionDataSource.onLoadMore()
         collectionView.reloadData()
