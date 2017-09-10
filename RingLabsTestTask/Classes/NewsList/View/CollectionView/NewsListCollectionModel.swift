@@ -29,9 +29,7 @@ final class NewsListCollectionModel: CollectionModel {
         }
     }
 
-    var count: Int {
-        return cellModels.count
-    }
+    var count: Int { return cellModels.count }
 
     func cellModel(atIndexPath indexPath: IndexPath) -> CellModel {
         guard indexPath.row < cellModels.count else {
