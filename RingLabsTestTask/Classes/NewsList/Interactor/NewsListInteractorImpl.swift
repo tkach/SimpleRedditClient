@@ -19,46 +19,24 @@ final class NewsListInteractorImpl {
         let object: [String: Any] = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String : Any]
         let data1: [String: Any] = object["data"] as! [String: Any]
         let array = data1["children"] as! [[String: Any]]
-        return array.map {
-            let representation = $0 as! [String: Any]
-            let postDict = representation["data"] as! [String: Any]
-            var imageSource: String? = nil
-            if let image = postDict["preview"] as? [String: Any] {
-                if let img = image["images"] as? [[String: Any]] {
-                    if let first = img.first as? [String: Any] {
-                        if let source = first["source"] as? [String: Any] {
-                            if let sourceString = source["url"] {
-                                imageSource = sourceString as? String
-                            }
-                        }
-                    }
-                }
+        let models: [RedditEntryModel] = array.flatMap {
+            guard let postDict = $0["data"] as? NSDictionary else {
+                return nil
             }
+            return try? RedditEntryModel(map: Map(dictionary: postDict))
+        }
+        return models.flatMap{
+            entry in
             
-            let thumbnailURL: URL? = (postDict["thumbnail"] as? String).map {
-                _urlstring in
-                return URL(string: _urlstring)
-            } ?? nil
-            let proportion: CGFloat
-            if let width = postDict["thumbnail_width"] as? CGFloat,
-                let height = postDict["thumbnail_height"] as? CGFloat {
-                proportion = width / height
-            }
-            else {
-                proportion = 0
-            }
-            let originalURL: URL? = imageSource.map {
-                _urlstring in
-                URL(string: _urlstring)
-            } ?? nil
-            
-            return NewsItem(title: postDict["title"] as! String,
-                            author: postDict["author"] as! String,
-                            comments: 0,
-                            date: Date(),
-                            thumbnailUrl: thumbnailURL,
-                            thumbnailAspect: proportion,
-                            originalUrl: originalURL)
+            let date = Date(timeIntervalSince1970: entry.created)
+            let aspect = entry.thumbnail.aspect
+            return NewsItem(title: entry.title,
+                            author: entry.author,
+                            comments: entry.comments,
+                            date: date,
+                            thumbnailUrl: entry.thumbnail.url,
+                            thumbnailAspect: aspect,
+                            originalUrl: entry.image.url)
         }
     }
 }

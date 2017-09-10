@@ -2,7 +2,7 @@
 // Created by Alexander Tkachenko on 9/10/17.
 //
 
-import Foundation
+import UIKit
 
 protocol Convertible {
     associatedtype ConvertedType = Self

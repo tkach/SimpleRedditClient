@@ -44,5 +44,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSContactsUsageDescription</key>
+	<string>Used to set photo to contact</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Used to save photo to gallery</string>
 </dict>
 </plist>

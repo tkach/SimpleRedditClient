@@ -14,10 +14,6 @@ struct Map {
         return try self.from(field, transformation: T.fromMap)
     }
 
-    func optionalFrom<T: Convertible>(_ field: String) -> T? where T == T.ConvertedType {
-        return try? self.from(field, transformation: T.fromMap)
-    }
-
     func from<T>(_ field: String, transformation: (Any) throws -> T) throws -> T {
         return try transformation(try self.JSONFromField(field))
     }

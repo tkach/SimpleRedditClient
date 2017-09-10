@@ -47,6 +47,7 @@ extension RedditThumbnailModel: Convertible {
         guard let dict = value as? [String: Any] else {
             throw MappingError.cantConvert(value: value)
         }
+        
         let thumbnailURL: URL? = (dict["thumbnail"] as? String).map({ URL(string: $0)}) ?? nil
         let size: CGSize
         if let width = dict["thumbnail_width"] as? CGFloat,

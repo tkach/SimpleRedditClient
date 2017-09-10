@@ -13,5 +13,19 @@ final class NewsItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         posterView.load(imageURL: newsItem.originalUrl)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+                title: "Share",
+                style: .plain,
+                target: self,
+                action: #selector(onShare)
+        )
+    }
+
+    @objc func onShare() {
+        if let image = posterView.imageView.image {
+            let vc = UIActivityViewController(activityItems: [image, url],
+                                              applicationActivities: nil)
+            present(vc, animated: true)
+        }
     }
 }
