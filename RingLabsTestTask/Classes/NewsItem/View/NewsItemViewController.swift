@@ -15,7 +15,7 @@ final class NewsItemViewController: UIViewController {
         title = newsItem.title
         posterView.load(imageURL: newsItem.originalUrl)
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-                title: "Share",
+                title: "NewsItem.Share".localized(),
                 style: .plain,
                 target: self,
                 action: #selector(onShare)

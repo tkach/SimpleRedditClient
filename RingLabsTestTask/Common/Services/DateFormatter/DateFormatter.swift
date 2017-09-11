@@ -14,7 +14,7 @@ final class DateFormatter {
         guard let timeString = formatter.string(from: date, to: now) else {
             return ""
         }
-        let formatString = NSLocalizedString("%@ ago", comment: "")
-        return String(format: formatString, timeString)
+        let ago = "DateFormatter.Ago".localized()
+        return timeString + " " + ago
     }
 }

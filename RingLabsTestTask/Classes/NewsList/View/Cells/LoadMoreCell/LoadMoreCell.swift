@@ -13,6 +13,7 @@ final class LoadMoreCell: UICollectionViewCell, UpdatableCell {
         switch model.state {
         case .failed:
             errorLabel.isHidden = false
+            errorLabel.text = "NetworkError".localized()
             activityIndicator.isHidden = true
             activityIndicator.stopAnimating()
         case .loading:

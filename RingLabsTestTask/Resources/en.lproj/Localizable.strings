@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  RingLabsTestTask
+
+  Created by Alexander Tkachenko on 9/10/17.
+
+*/
+
+"NewsList.Top" = "Top";
+"DateFormatter.Ago" = "ago";
+"NewsItemCell.PostedBy" = "posted by";
+"NewsItem.Share" = "Share";
+"NetworkFailure" = "Network failure";

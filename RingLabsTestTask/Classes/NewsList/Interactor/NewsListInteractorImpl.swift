@@ -47,10 +47,10 @@ extension NewsListInteractorImpl: NewsListInteractorInput {
 
     private func didFail(with error: NetworkError, loadingNext: Bool) {
         if (loadingNext) {
-            output?.didFailLoadingNext(error: NewsListError(text: "Network Failure"))
+            output?.didFailLoadingNext(error: NewsListError(text: "NetworkFailure".localized()))
         }
         else {
-            output?.didFail(error: NewsListError(text: "Network Failure"))
+            output?.didFail(error: NewsListError(text: "NetworkFailure".localized()))
         }
     }
 }

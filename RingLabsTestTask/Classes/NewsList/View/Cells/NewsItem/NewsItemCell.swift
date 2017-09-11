@@ -51,7 +51,7 @@ extension NewsItemCell: UpdatableCell {
 
 private extension NewsItemCell {
     func formattedAuthor(author: String) -> String {
-        let result = "posted by \(author)"
+        let result = "NewsItemCell.PostedBy".localized() + " \(author)"
         return result
     }
     

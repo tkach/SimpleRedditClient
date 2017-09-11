@@ -13,7 +13,6 @@
 		B069C131067427A14C5F826C /* ImageLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C68B8A01F82D1E52122E /* ImageLoadableView.swift */; };
 		B069C161F556A649662ACC35 /* NewsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C6F329121C106F573CDA /* NewsListInteractor.swift */; };
 		B069C1E4EBE90DC697DA0FA8 /* EntryListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C87B0B883D34A3F9DAD4 /* EntryListResponse.swift */; };
-		B069C208915C3A33D6BE9331 /* NewsListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B069CE9F352E1DB1B7528E64 /* NewsListViewController.storyboard */; };
 		B069C2372F3F869EA4EDFA19 /* UtilsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C21A20C78F7B9ED38B3F /* UtilsAssembly.swift */; };
 		B069C291F3CF800C0294A8F3 /* NewsItemBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C8719141285DFA670CB8 /* NewsItemBuilder.swift */; };
 		B069C2D3AF338A66F1633358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B069CA96125AE897E82FB815 /* Assets.xcassets */; };
@@ -63,11 +62,12 @@
 		B069CF0B5C468EEAF41AA286 /* NewsListCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C1D692406B14B2FAEAFE /* NewsListCollectionDelegate.swift */; };
 		B069CF334F59034310E3E1F2 /* NewsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C93BD2C555E5C41F6643 /* NewsListRouter.swift */; };
 		B069CF723B2EB34C8D93C809 /* RedditThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CCD4273ADB06CCB892D3 /* RedditThumbnailModel.swift */; };
-		B512F9951F65C4F60040C5BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B512F9941F65C4F60040C5BF /* Localizable.strings */; };
-		B512F9971F65C5390040C5BF /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B512F9961F65C5390040C5BF /* Localizable.stringsdict */; };
 		B512F9991F65C5E90040C5BF /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B512F9981F65C5E90040C5BF /* String+Localizable.swift */; };
+		B512F99A1F6738F00040C5BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B512F99C1F6738F00040C5BF /* Localizable.strings */; };
+		B512F99F1F6739B40040C5BF /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B512F9A11F6739B40040C5BF /* Localizable.stringsdict */; };
+		B5245C4C1F673C9200F01C29 /* NewsListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5245C4E1F673C9200F01C29 /* NewsListViewController.storyboard */; };
+		B5245C531F673CBC00F01C29 /* NewsItemViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5245C551F673CBC00F01C29 /* NewsItemViewController.storyboard */; };
 		B5A77F571F64A211002B503B /* LoadMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A77F561F64A211002B503B /* LoadMoreCell.xib */; };
-		B5A77F5B1F654B93002B503B /* NewsItemViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A77F5A1F654B93002B503B /* NewsItemViewController.storyboard */; };
 		B5A77F631F658370002B503B /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A77F621F658370002B503B /* Tests.swift */; };
 		B5A77F6B1F65854E002B503B /* RedditEntryModelParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A77F6A1F65854E002B503B /* RedditEntryModelParsingTests.swift */; };
 		B5A77F6D1F658734002B503B /* RedditEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C1A8A7733EDD30E1A121 /* RedditEntry.swift */; };
@@ -146,17 +146,25 @@
 		B069CCCB45B2148ACB388C7E /* NewsListServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListServiceImpl.swift; sourceTree = "<group>"; };
 		B069CCD4273ADB06CCB892D3 /* RedditThumbnailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditThumbnailModel.swift; sourceTree = "<group>"; };
 		B069CE0974661AFAF5B4D81F /* NewsListInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListInteractorImpl.swift; sourceTree = "<group>"; };
-		B069CE9F352E1DB1B7528E64 /* NewsListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsListViewController.storyboard; sourceTree = "<group>"; };
 		B069CEE3107E3125FFDEF83E /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		B069CEE55AC4CB5F1EC5F80E /* RedditAPIClientImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditAPIClientImpl.swift; sourceTree = "<group>"; };
 		B069CF146A5BB665F75288FB /* ImageLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoadable.swift; sourceTree = "<group>"; };
 		B069CF21A652A71C1957AED8 /* ModulesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModulesAssembly.swift; sourceTree = "<group>"; };
 		B069CFC2FC275CD62524919A /* NewsListCollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListCollectionModel.swift; sourceTree = "<group>"; };
-		B512F9941F65C4F60040C5BF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		B512F9961F65C5390040C5BF /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		B512F9981F65C5E90040C5BF /* String+Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
+		B512F99B1F6738F00040C5BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B512F99D1F6739170040C5BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B512F99E1F6739370040C5BF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B512F9A01F6739B40040C5BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = Base; path = Base.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		B512F9A21F6739B90040C5BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		B512F9A31F6739BA0040C5BF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		B5245C4D1F673C9200F01C29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewsListViewController.storyboard; sourceTree = "<group>"; };
+		B5245C501F673C9600F01C29 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/NewsListViewController.strings; sourceTree = "<group>"; };
+		B5245C521F673C9800F01C29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NewsListViewController.strings; sourceTree = "<group>"; };
+		B5245C541F673CBC00F01C29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewsItemViewController.storyboard; sourceTree = "<group>"; };
+		B5245C571F673CC000F01C29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NewsItemViewController.strings; sourceTree = "<group>"; };
+		B5245C591F673CC100F01C29 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/NewsItemViewController.strings; sourceTree = "<group>"; };
 		B5A77F561F64A211002B503B /* LoadMoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadMoreCell.xib; sourceTree = "<group>"; };
-		B5A77F5A1F654B93002B503B /* NewsItemViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsItemViewController.storyboard; sourceTree = "<group>"; };
 		B5A77F601F658370002B503B /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A77F621F658370002B503B /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		B5A77F641F658370002B503B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -225,7 +233,7 @@
 		B069C0C91CB2A46B875D1342 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				B069CE9F352E1DB1B7528E64 /* NewsListViewController.storyboard */,
+				B5245C4E1F673C9200F01C29 /* NewsListViewController.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -379,7 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				B069C746F2919D241E1461C1 /* NewsItemViewController.swift */,
-				B5A77F5A1F654B93002B503B /* NewsItemViewController.storyboard */,
+				B5245C551F673CBC00F01C29 /* NewsItemViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -475,8 +483,8 @@
 			children = (
 				B069CA96125AE897E82FB815 /* Assets.xcassets */,
 				B069C20972A3E1DA0C20E69E /* LaunchScreen.storyboard */,
-				B512F9941F65C4F60040C5BF /* Localizable.strings */,
-				B512F9961F65C5390040C5BF /* Localizable.stringsdict */,
+				B512F99C1F6738F00040C5BF /* Localizable.strings */,
+				B512F9A11F6739B40040C5BF /* Localizable.stringsdict */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -665,6 +673,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = B5E23F381F63C67B003A59F1;
 			productRefGroup = B5E23F421F63C67B003A59F1 /* Products */;
@@ -692,11 +701,11 @@
 				B069C2D3AF338A66F1633358 /* Assets.xcassets in Resources */,
 				B5A77F571F64A211002B503B /* LoadMoreCell.xib in Resources */,
 				B069C36A6417F987BC093F5E /* LaunchScreen.storyboard in Resources */,
-				B512F9951F65C4F60040C5BF /* Localizable.strings in Resources */,
-				B069C208915C3A33D6BE9331 /* NewsListViewController.storyboard in Resources */,
-				B512F9971F65C5390040C5BF /* Localizable.stringsdict in Resources */,
+				B512F99A1F6738F00040C5BF /* Localizable.strings in Resources */,
+				B5245C4C1F673C9200F01C29 /* NewsListViewController.storyboard in Resources */,
+				B512F99F1F6739B40040C5BF /* Localizable.stringsdict in Resources */,
 				B069C523F14771C7C5699DEA /* NewsItemCell.xib in Resources */,
-				B5A77F5B1F654B93002B503B /* NewsItemViewController.storyboard in Resources */,
+				B5245C531F673CBC00F01C29 /* NewsItemViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,6 +811,46 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		B512F99C1F6738F00040C5BF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B512F99B1F6738F00040C5BF /* Base */,
+				B512F99D1F6739170040C5BF /* en */,
+				B512F99E1F6739370040C5BF /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B512F9A11F6739B40040C5BF /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B512F9A01F6739B40040C5BF /* Base */,
+				B512F9A21F6739B90040C5BF /* en */,
+				B512F9A31F6739BA0040C5BF /* ru */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+		B5245C4E1F673C9200F01C29 /* NewsListViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5245C4D1F673C9200F01C29 /* Base */,
+				B5245C501F673C9600F01C29 /* ru */,
+				B5245C521F673C9800F01C29 /* en */,
+			);
+			name = NewsListViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		B5245C551F673CBC00F01C29 /* NewsItemViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5245C541F673CBC00F01C29 /* Base */,
+				B5245C571F673CC000F01C29 /* en */,
+				B5245C591F673CC100F01C29 /* ru */,
+			);
+			name = NewsItemViewController.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -835,6 +884,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -886,6 +936,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

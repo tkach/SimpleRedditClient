@@ -22,7 +22,7 @@ class NewsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Top"
+        title = "NewsList.Top".localized()
         
         prepareCollectionView()
         presenter.viewLoaded()
