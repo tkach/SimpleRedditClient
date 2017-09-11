@@ -5,7 +5,7 @@
 import Foundation
 
 let entryJsonString = "{\"name\":\"x9993\",\"title\": \"I am test title\",\"author\": \"junglec123\","
-    + "\"created\":1504933674,"
+    + "\"created_utc\":1504933674,"
     + "\"thumbnail\":\"http://www.google.com\","
     + "\"thumbnail_width\":100,"
     + "\"thumbnail_height\": 200,"

@@ -18,7 +18,7 @@ struct RedditEntryModel {
         try title = map.from("title")
         try author = map.from("author")
         try comments = map.from("num_comments")
-        try created = map.from("created")
+        try created = map.from("created_utc")
         try thumbnail = map.from("")
         try image = map.from("")
     }
