@@ -10,8 +10,7 @@ protocol NewsListInteractorInput: class {
 }
 
 protocol NewsListInteractorOutput: class {
-    func didLoad(news: [NewsItem])
-    func didLoadNext(news: [NewsItem])
+    func didLoad(page: NewsListPage)
     func didFail(error: NewsListError)
     func didFailLoadingNext(error: NewsListError)
 }

@@ -5,5 +5,8 @@
 import Foundation
 
 protocol NewsListView: class {
-    func update(with: NewsListViewState)
+    func didStartLoading()
+    func didFailedLoading(error: NewsListError)
+    func didFailedLoadingMore(error: NewsListError)
+    func didLoad(page: NewsListPage)
 }

@@ -5,6 +5,7 @@
 import Foundation
 
 enum LoadMoreState {
+    case initial
     case loading
     case failed
 }

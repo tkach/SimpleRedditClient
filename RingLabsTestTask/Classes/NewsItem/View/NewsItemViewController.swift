@@ -12,6 +12,7 @@ final class NewsItemViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = newsItem.title
         posterView.load(imageURL: newsItem.originalUrl)
         navigationItem.rightBarButtonItem = UIBarButtonItem(
                 title: "Share",

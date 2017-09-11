@@ -10,6 +10,10 @@ protocol NewsListCollectionActionsDelegate: class {
 }
 
 final class NewsListCollectionDelegate: NSObject {
+    struct Constants {
+        static let loadmoreCellHeight: CGFloat = 160
+    }
+    
     fileprivate weak var actionsDelegate: NewsListCollectionActionsDelegate?
     weak var model: NewsListCollectionModel?
     var centeredIndexPath: IndexPath?
@@ -26,13 +30,12 @@ final class NewsListCollectionDelegate: NSObject {
 
 extension NewsListCollectionDelegate: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else {
             return .zero
         }
         let itemWidth = collectionView.bounds.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right
         
-        let proposedSize = CGSize(width: itemWidth, height: 60)
+        let proposedSize = CGSize(width: itemWidth, height: Constants.loadmoreCellHeight)
         guard let model = model?.cellModel(atIndexPath: indexPath) as? NewsItemCell.Model else {
             return proposedSize
         }
@@ -50,7 +53,7 @@ extension NewsListCollectionDelegate: UICollectionViewDelegateFlowLayout {
         return result
     }
 
-    public func collectionView(_ collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
+    func collectionView(_ collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
         guard let indexPath = centeredIndexPath,
               let attributes = collectionView.layoutAttributesForItem(at: indexPath)
                 else {
@@ -61,20 +64,21 @@ extension NewsListCollectionDelegate: UICollectionViewDelegateFlowLayout {
         return result
     }
 
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let model = model, model.count > 0, !model.loadMoreInProgress else { return }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let model = model, model.count > 0, model.loadMoreState == .initial else { return }
         if (needToTriggerLoadMore(scrollView: scrollView)) {
-            model.loadMoreInProgress = true
             actionsDelegate?.onLoadMore()
         }
     }
 
     private func needToTriggerLoadMore(scrollView: UIScrollView) -> Bool {
         guard scrollView.contentSize.height > 0 else { return false }
-        return scrollView.contentSize.height - scrollView.contentOffset.y < scrollView.frame.size.height * 2
+        let distanceToTrigger = scrollView.frame.size.height
+        let distanceToContentEnd = scrollView.contentSize.height - scrollView.contentOffset.y
+        return distanceToContentEnd < distanceToTrigger
     }
 
-    public func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         let cellModel = model?.cellModel(atIndexPath: indexPath)
         if let model = cellModel as? LoadMoreModel {
             return model.state == .failed
@@ -86,14 +90,13 @@ extension NewsListCollectionDelegate: UICollectionViewDelegateFlowLayout {
     }
 
 
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cellModel = model?.cellModel(atIndexPath: indexPath)
         if let cellModel = cellModel as? NewsItem {
             actionsDelegate?.on(newsItem: cellModel)
         }
         else if let cellModel = cellModel as? LoadMoreModel, cellModel.state == .failed {
             actionsDelegate?.onLoadMore()
-            model?.loadMoreInProgress = true
         }
     }
 }

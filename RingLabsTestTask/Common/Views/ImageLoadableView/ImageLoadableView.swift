@@ -33,8 +33,8 @@ final class ImageLoadableView: UIView, ImageLoadable {
     
     private func updateSubviews() {
         guard dirty else { return }
+        let newAlpha: CGFloat = image == nil ? 0 : 1
         if animated {
-            let newAlpha: CGFloat = image == nil ? 0 : 1
             imageView.image = image
             UIView.animate(withDuration: 0.3,
                            delay: 0,
@@ -45,6 +45,7 @@ final class ImageLoadableView: UIView, ImageLoadable {
                            completion: nil)
         }
         else {
+            imageView.alpha = newAlpha
             imageView.image = image
         }
     }

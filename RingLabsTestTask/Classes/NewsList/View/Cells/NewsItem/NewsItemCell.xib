@@ -82,7 +82,7 @@ latest news and features</string>
                             <constraint firstAttribute="bottom" secondItem="N2u-0f-MFS" secondAttribute="bottom" id="x3K-xQ-623"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="animated" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="animated" value="NO"/>
                         </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="imageView" destination="BWd-NZ-f6D" id="avC-Ul-ttB"/>

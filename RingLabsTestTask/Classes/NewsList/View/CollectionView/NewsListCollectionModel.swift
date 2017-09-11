@@ -11,22 +11,42 @@ protocol CollectionModel {
 
 final class NewsListCollectionModel: CollectionModel {
     fileprivate var cellModels: [CellModel] = []
-    var loadMoreInProgress: Bool = false {
-        didSet {
-            if let loadMoreModel = cellModels.last as? LoadMoreModel {
-                loadMoreModel.state = loadMoreInProgress ? .loading : .failed
-            }
-        }
-    }
+    fileprivate var news: [NewsItem] = []
+    private (set) var loadMoreState: LoadMoreState = .initial
 
-    func rebuild(with model: NewsListViewModel) {
-        loadMoreInProgress = model.loadMoreFailed == true
-        cellModels = model.newsItemsLoaded
-        if (model.hasMore) {
-            let state: LoadMoreState = model.loadMoreFailed ? .failed : .loading
-            let loadMore = LoadMoreModel(state: state)
+    func append(page: NewsListPage) -> (toDelete: [IndexPath], toInsert: [IndexPath]) {
+        let loadmoreIndex: Int? = cellModels.index { $0 is LoadMoreModel }
+        cellModels = cellModels.flatMap { $0 as? NewsItem }
+        
+        let startingInsertIndex = news.count
+        news.append(contentsOf: page.news)
+        cellModels.append(contentsOf: page.news as [CellModel])
+        if (page.hasNext) {
+            loadMoreState = .initial
+            let loadMore = LoadMoreModel(state: .initial)
             cellModels.append(loadMore)
         }
+        var toDelete: [IndexPath] = []
+        if let loadmoreIndex = loadmoreIndex {
+            toDelete.append(IndexPath(item: loadmoreIndex, section: 0))
+        }
+        var toInsert: [IndexPath] = []
+        let endingInsertIndex = cellModels.count - 1
+        
+        for i in startingInsertIndex...endingInsertIndex {
+            toInsert.append(IndexPath(item: i, section: 0))
+        }
+        return (toDelete: toDelete, toInsert: toInsert)
+    }
+    
+    func updateLoadmore(state: LoadMoreState) -> IndexPath {
+        guard let loadMoreModel = cellModels.last as? LoadMoreModel else {
+            fatalError("trying to update load more state, but loadmore cell is not added to collection")
+        }
+        loadMoreState = state
+        loadMoreModel.state = state
+        let index: Int = cellModels.count - 1
+        return IndexPath(item: index, section: 0)
     }
 
     var count: Int { return cellModels.count }

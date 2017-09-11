@@ -15,6 +15,7 @@
 		B069C1E4EBE90DC697DA0FA8 /* EntryListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C87B0B883D34A3F9DAD4 /* EntryListResponse.swift */; };
 		B069C208915C3A33D6BE9331 /* NewsListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B069CE9F352E1DB1B7528E64 /* NewsListViewController.storyboard */; };
 		B069C2372F3F869EA4EDFA19 /* UtilsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C21A20C78F7B9ED38B3F /* UtilsAssembly.swift */; };
+		B069C291F3CF800C0294A8F3 /* NewsItemBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C8719141285DFA670CB8 /* NewsItemBuilder.swift */; };
 		B069C2D3AF338A66F1633358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B069CA96125AE897E82FB815 /* Assets.xcassets */; };
 		B069C2D8014C379EE7416107 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C6D3D3BCB7EA31665FDB /* RequestBuilder.swift */; };
 		B069C36A6417F987BC093F5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B069C20972A3E1DA0C20E69E /* LaunchScreen.storyboard */; };
@@ -25,7 +26,7 @@
 		B069C523F14771C7C5699DEA /* NewsItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B069C2675F1FCED15862F8B0 /* NewsItemCell.xib */; };
 		B069C5599A4E716FF9420CE6 /* ListingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C240E8856FDE8FF708A5 /* ListingParameters.swift */; };
 		B069C56FD2207C0E0AD46B18 /* NewsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C60DEB08C1A42BA8636D /* NewsListPresenter.swift */; };
-		B069C5C1C0CBDE4496E31A27 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C11AF82BA0BE10144E4A /* NewsListViewModel.swift */; };
+		B069C5C1C0CBDE4496E31A27 /* NewsListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C11AF82BA0BE10144E4A /* NewsListPage.swift */; };
 		B069C5EFD2ED962CE86E3759 /* RedditAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C5474A7049FBCE8863E1 /* RedditAPIClient.swift */; };
 		B069C63D9EC2545983C92CC3 /* ModulesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CF21A652A71C1957AED8 /* ModulesAssembly.swift */; };
 		B069C640B5D49DECFF0F037E /* UICollectionViewCell+Autosizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CB27256A6A86BB276CE8 /* UICollectionViewCell+Autosizing.swift */; };
@@ -96,7 +97,7 @@
 		B069C00AD965906E8103C2A6 /* NewsItemAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemAssembly.swift; sourceTree = "<group>"; };
 		B069C055C1A19ADF83CDEC15 /* NSDictionary+Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDictionary+Mapping.swift"; sourceTree = "<group>"; };
 		B069C10539C13AB0A2B5D23E /* AppAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
-		B069C11AF82BA0BE10144E4A /* NewsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
+		B069C11AF82BA0BE10144E4A /* NewsListPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListPage.swift; sourceTree = "<group>"; };
 		B069C1781AF16FAFDA6F6DDD /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		B069C1A8A7733EDD30E1A121 /* RedditEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditEntry.swift; sourceTree = "<group>"; };
 		B069C1C4FD10720AD45DD8DC /* UpdatableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatableCell.swift; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 		B069C79C486C0124CDD4031B /* NewsListCellHeightsCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListCellHeightsCache.swift; sourceTree = "<group>"; };
 		B069C83642209C23454FA250 /* NewsListAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListAssembly.swift; sourceTree = "<group>"; };
 		B069C85E9247F1ED464A6CF5 /* NewsItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemCell.swift; sourceTree = "<group>"; };
+		B069C8719141285DFA670CB8 /* NewsItemBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemBuilder.swift; sourceTree = "<group>"; };
 		B069C87B0B883D34A3F9DAD4 /* EntryListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryListResponse.swift; sourceTree = "<group>"; };
 		B069C93BD2C555E5C41F6643 /* NewsListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListRouter.swift; sourceTree = "<group>"; };
 		B069C9D24A33155894AACCF0 /* RedditEntryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditEntryModel.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				B069CB611A88567CA5019643 /* NewsItem.swift */,
+				B069C8719141285DFA670CB8 /* NewsItemBuilder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -550,7 +553,7 @@
 			children = (
 				B069C60411BCA0C1B3DA8A31 /* NewsListPresenterImpl.swift */,
 				B069C60DEB08C1A42BA8636D /* NewsListPresenter.swift */,
-				B069C11AF82BA0BE10144E4A /* NewsListViewModel.swift */,
+				B069C11AF82BA0BE10144E4A /* NewsListPage.swift */,
 				B069C550D6B14B20E8E87055 /* NewsListViewState.swift */,
 			);
 			path = Presenter;
@@ -737,7 +740,7 @@
 				B069C161F556A649662ACC35 /* NewsListInteractor.swift in Sources */,
 				B069C9D9777BFFA65E511D35 /* NewsListInteractorImpl.swift in Sources */,
 				B069CD979FC12116F4EA2E4D /* NewsItem.swift in Sources */,
-				B069C5C1C0CBDE4496E31A27 /* NewsListViewModel.swift in Sources */,
+				B069C5C1C0CBDE4496E31A27 /* NewsListPage.swift in Sources */,
 				B069CD26A11CD4A5D5631435 /* NewsListView.swift in Sources */,
 				B069CF334F59034310E3E1F2 /* NewsListRouter.swift in Sources */,
 				B069CB82C33D44AE0472FBF2 /* NewsListViewState.swift in Sources */,
@@ -776,6 +779,7 @@
 				B069C0A0A67834AA92545247 /* RedditAPIClientImpl.swift in Sources */,
 				B069C2D8014C379EE7416107 /* RequestBuilder.swift in Sources */,
 				B069C5599A4E716FF9420CE6 /* ListingParameters.swift in Sources */,
+				B069C291F3CF800C0294A8F3 /* NewsItemBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

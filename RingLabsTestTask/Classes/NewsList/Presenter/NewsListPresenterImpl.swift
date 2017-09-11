@@ -9,8 +9,6 @@ final class NewsListPresenterImpl {
     fileprivate unowned let router: NewsListRouter
     fileprivate let interactor: NewsListInteractorInput
     
-    fileprivate var news: [NewsItem] = []
-
     init(view: NewsListView, interactor: NewsListInteractorInput, router: NewsListRouter) {
         self.view = view
         self.interactor = interactor
@@ -20,7 +18,7 @@ final class NewsListPresenterImpl {
 
 extension NewsListPresenterImpl: NewsListPresenter {
     func viewLoaded() {
-        view.update(with: .loading)
+        view.didStartLoading()
         interactor.fetchNewsList()
     }
 
@@ -29,34 +27,47 @@ extension NewsListPresenterImpl: NewsListPresenter {
     }
 
     func didTapRetryLoading() {
+        view.didStartLoading()
         interactor.fetchNewsList()
-        view.update(with: .loading)
     }
     
     func didScrollToEnd() {
+        view.didStartLoading()
         interactor.fetchNextItems()
     }
 }
 
 extension NewsListPresenterImpl: NewsListInteractorOutput {
-    func didLoad(news: [NewsItem]) {
-        print("news count: \(news.count)")
-        self.news = news
-        view.update(with: .loaded(NewsListViewModel(newsItemsLoaded: news, hasMore: true, loadMoreFailed: false)))
-    }
-
-    func didLoadNext(news: [NewsItem]) {
-        self.news.append(contentsOf: news)
-        print("news count: \(news.count)")
-        view.update(with: .loaded(NewsListViewModel(newsItemsLoaded: news, hasMore: true, loadMoreFailed: false)))
+    func didLoad(page: NewsListPage) {
+        view.didLoad(page: page)
     }
 
     func didFail(error: NewsListError) {
-        view.update(with: .failed(error))
+        view.didFailedLoading(error: error)
     }
     
     func didFailLoadingNext(error: NewsListError) {
-        view.update(with: .loaded(NewsListViewModel(newsItemsLoaded: news, hasMore: true, loadMoreFailed: true)))
+        view.didFailedLoadingMore(error: error)
     }
+
+//    func didLoad(news: [NewsItem]) {
+//        print("news count: \(news.count)")
+//        self.news = news
+//        view.update(with: .loaded(NewsListPage(news: news, hasNext: true, loadMoreFailed: false)))
+//    }
+//
+//    func didLoadNext(news: [NewsItem]) {
+//        self.news.append(contentsOf: news)
+//        print("news count: \(news.count)")
+//        view.update(with: .loaded(NewsListPage(news: news, hasNext: true, loadMoreFailed: false)))
+//    }
+//
+//    func didFail(error: NewsListError) {
+//        view.update(with: .failed(error))
+//    }
+//
+//    func didFailLoadingNext(error: NewsListError) {
+//        view.update(with: .loaded(NewsListPage(news: news, hasNext: true, loadMoreFailed: true)))
+//    }
 }
 

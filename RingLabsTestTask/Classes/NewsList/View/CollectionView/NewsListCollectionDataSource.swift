@@ -7,7 +7,10 @@ import UIKit
 final class NewsListCollectionDataSource: NSObject {
     fileprivate let model: NewsListCollectionModel
     fileprivate let dateFormatter = DateFormatter()
-
+    var hasData: Bool {
+        return model.count > 0
+    }
+    
     init(model: NewsListCollectionModel) {
         self.model = model
     }
@@ -17,12 +20,13 @@ final class NewsListCollectionDataSource: NSObject {
         registerCell(cell: LoadMoreCell.self, collectionView: collectionView)
     }
     
-    func update(with vm: NewsListViewModel) {
-        model.rebuild(with: vm)
+    func append(page: NewsListPage) -> (toDelete: [IndexPath], toInsert: [IndexPath]) {
+        let indexPaths = model.append(page: page)
+        return indexPaths
     }
     
-    func onLoadMore() {
-        model.loadMoreInProgress = true
+    func updateLoadMore(state: LoadMoreState) -> IndexPath {
+        return model.updateLoadmore(state: state)
     }
 }
 

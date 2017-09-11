@@ -20,20 +20,12 @@ class NewsListViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
+        title = "Top"
         
         prepareCollectionView()
         presenter.viewLoaded()
-    }
-    
-    @IBAction func onRetry(_ sender: Any) {
-        presenter.didTapRetryLoading()
     }
 
     private func prepareCollectionView() {
@@ -58,6 +50,10 @@ class NewsListViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
     }
     
+    @IBAction func onRetry(_ sender: Any) {
+        presenter.didTapRetryLoading()
+    }
+    
     private func rememberCurrentVisibleCell() {
         guard isViewLoaded else { return }
         collectionDelegate.centeredIndexPath = collectionView.indexPathForVisibleItemAtCenter
@@ -65,24 +61,41 @@ class NewsListViewController: UIViewController {
 }
 
 extension NewsListViewController: NewsListView {
-    func update(with state: NewsListViewState) {
-        switch state {
-        case .loading:
+    func didStartLoading() {
+        let isFirstLoad = !collectionDataSource.hasData
+        if (isFirstLoad) {
             errorView.isHidden = true
             activityIndicator.startAnimating()
-        case .failed(let error):
-            errorLabel.text = error.text ?? errorLabel.text
-            errorView.isHidden = false
-            activityIndicator.stopAnimating()
-        case .loaded(let model):
-            errorView.isHidden = true
-            activityIndicator.stopAnimating()
-            collectionDataSource.update(with: model)
-            collectionView.reloadData()
-        case .loadedNext(let model):
-            collectionDataSource.update(with: model)
-            collectionView.reloadData()
         }
+        else {
+            let indexPath = collectionDataSource.updateLoadMore(state: .loading)
+            collectionView.reloadItems(at: [indexPath])
+        }
+    }
+
+    func didLoad(page: NewsListPage) {
+        errorView.isHidden = true
+        activityIndicator.stopAnimating()
+        let (toDelete, toInsert) = collectionDataSource.append(page: page)
+        collectionView.performBatchUpdates({ 
+            if (!toDelete.isEmpty) {
+                self.collectionView.deleteItems(at: toDelete)
+            }
+            if (!toInsert.isEmpty) {
+                self.collectionView.insertItems(at: toInsert)
+            }
+        })
+    }
+    
+    func didFailedLoading(error: NewsListError) {
+        errorLabel.text = error.text ?? errorLabel.text
+        errorView.isHidden = false
+        activityIndicator.stopAnimating()
+    }
+
+    func didFailedLoadingMore(error: NewsListError) {
+        let indexPath = collectionDataSource.updateLoadMore(state: .failed)
+        collectionView.reloadItems(at: [indexPath])
     }
 }
 
@@ -93,7 +106,5 @@ extension NewsListViewController: NewsListCollectionActionsDelegate {
     
     func onLoadMore() {
         presenter.didScrollToEnd()
-        collectionDataSource.onLoadMore()
-        collectionView.reloadData()
     }
 }

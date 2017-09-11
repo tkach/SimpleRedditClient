@@ -11,6 +11,6 @@ struct NewsListError: Error {
 enum NewsListViewState {
     case loading
     case failed(NewsListError)
-    case loaded(NewsListViewModel)
-    case loadedNext(NewsListViewModel)
+    case loaded(NewsListPage)
+    case loadedNext(NewsListPage)
 }
