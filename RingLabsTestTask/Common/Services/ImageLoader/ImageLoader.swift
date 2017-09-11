@@ -4,9 +4,13 @@
 
 import UIKit
 
+struct ImageLoadingError {
+    let text: String
+}
+
 enum ImageLoadingResult {
     case success(UIImage)
-    case failure
+    case failure(ImageLoadingError)
     var image: UIImage? {
         let result: UIImage?
         switch self {

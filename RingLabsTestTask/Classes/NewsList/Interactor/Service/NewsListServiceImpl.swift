@@ -19,7 +19,7 @@ extension NewsListServiceImpl: NewsListService {
         let parameters = ListingParameters(limit: pageLimit, after: nil, rawJson: true)
         apiClient.getTop(parameters: parameters) {
             result in
-            switch (result) {
+            switch result {
             case .success(let response):
                 self.lastLoaded = response.list.last
                 completion(result)
@@ -37,7 +37,7 @@ extension NewsListServiceImpl: NewsListService {
         let parameters = ListingParameters(limit: pageLimit, after: last, rawJson: true)
         apiClient.getTop(parameters: parameters) {
             result in
-            switch (result) {
+            switch result {
             case .success(let response):
                 self.lastLoaded = response.list.last
                 completion(result)

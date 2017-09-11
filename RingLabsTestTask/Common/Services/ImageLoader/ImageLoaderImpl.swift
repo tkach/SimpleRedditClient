@@ -28,7 +28,7 @@ extension ImageLoaderImpl: ImageLoader {
                             completion(.success(image))
                         }
                         else {
-                            completion(.failure)
+                            completion(.failure(ImageLoadingError(text: "ImageLoadError".localized())))
                         }
                     }
                     }.resume()

@@ -7,12 +7,14 @@ import UIKit
 final class ModulesAssembly {
 
     let apiClient: RedditAPIClient
+    let utilsAssembly: UtilsAssembly
 
     //injectable, please see AppAssembly
     var router: AppRouter!
 
-    init(apiClient: RedditAPIClient) {
+    init(apiClient: RedditAPIClient, utilsAssembly: UtilsAssembly) {
         self.apiClient = apiClient
+        self.utilsAssembly = utilsAssembly
     }
 
     private lazy var newsListAssembly: NewsListAssembly = {
@@ -20,7 +22,7 @@ final class ModulesAssembly {
     }()
 
     private lazy var newsItemAssembly: NewsItemAssembly = {
-        NewsItemAssembly()
+        NewsItemAssembly(imageLoader: self.utilsAssembly.imageLoader)
     }()
 
     func newsListViewController() -> UIViewController {

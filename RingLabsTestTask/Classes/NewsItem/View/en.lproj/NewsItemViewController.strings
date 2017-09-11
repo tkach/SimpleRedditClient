@@ -1,3 +1,6 @@
 
-/* Class = "UILabel"; text = "Please wait, \nloading is in progress"; ObjectID = "o49-ex-1th"; */
-"o49-ex-1th.text" = "Please wait, \nloading is in progress";
+/* Class = "UIButton"; normalTitle = "Retry"; ObjectID = "lwn-14-IHd"; */
+"lwn-14-IHd.normalTitle" = "Retry";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "t8F-Y0-IoT"; */
+"t8F-Y0-IoT.text" = "Label";

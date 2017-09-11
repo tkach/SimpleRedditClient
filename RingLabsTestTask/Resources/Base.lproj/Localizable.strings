@@ -11,3 +11,4 @@
 "NewsItemCell.PostedBy" = "posted by";
 "NewsItem.Share" = "Share";
 "NetworkFailure" = "Network failure";
+"ImageLoadError" = "Failed to load image";

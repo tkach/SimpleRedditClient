@@ -11,3 +11,4 @@
 "NewsItemCell.PostedBy" = "автор:";
 "NewsItem.Share" = "Поделиться/Сохранить";
 "NetworkFailure" = "Ошибка сети";
+"ImageLoadError" = "Ошибка при загрузке картинки";

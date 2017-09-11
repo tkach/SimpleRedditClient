@@ -14,7 +14,7 @@ final class AppAssembly {
         apiAssembly = APIAssembly()
         utilsAssembly = UtilsAssembly()
 
-        controllersAssembly = ModulesAssembly(apiClient: apiAssembly.apiClient)
+        controllersAssembly = ModulesAssembly(apiClient: apiAssembly.apiClient, utilsAssembly: utilsAssembly)
         router = AppRouter(controllersAssembly: controllersAssembly)
         controllersAssembly.router = router
     }

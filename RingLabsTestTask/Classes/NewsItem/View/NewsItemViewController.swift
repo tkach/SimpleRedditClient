@@ -5,32 +5,61 @@
 import UIKit
 
 final class NewsItemViewController: UIViewController {
-    //injectable
-    var newsItem: NewsItem!
+    fileprivate var sharingImage: UIImage?
     
-    @IBOutlet weak var posterView: ImageLoadableView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
+    var presenter: NewsItemPresenter!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = newsItem.title
-        posterView.load(imageURL: newsItem.originalUrl)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-                title: "NewsItem.Share".localized(),
-                style: .plain,
-                target: self,
-                action: #selector(onShare)
-        )
+        presenter.viewLoaded()
     }
 
     @objc func onShare(item: UIBarButtonItem) {
-        if let image = posterView.imageView.image {
-            let vc = UIActivityViewController(activityItems: [image],
-                                              applicationActivities: nil)
-            if let popoverController = vc.popoverPresentationController {
-                popoverController.barButtonItem = item
-                popoverController.permittedArrowDirections = .up
-            }
-            present(vc, animated: true)
+        guard let image = sharingImage else { fatalError("Sharing image should be loaded prior to sharing") }
+        let vc = UIActivityViewController(activityItems: [image],
+                                          applicationActivities: nil)
+        if let popoverController = vc.popoverPresentationController {
+            popoverController.barButtonItem = item
+            popoverController.permittedArrowDirections = .up
         }
+        present(vc, animated: true)
     }
+
+    @IBAction func onRetry(_ sender: Any) {
+        activityIndicator.startAnimating()
+        errorView.isHidden = true
+        presenter.retryButtonTapped()
+    }
+}
+
+extension NewsItemViewController: NewsItemView {
+    func didLoad(image: UIImage) {
+        sharingImage = image
+        imageView.image = image
+        activityIndicator.stopAnimating()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "NewsItem.Share".localized(),
+            style: .plain,
+            target: self,
+            action: #selector(onShare)
+        )
+    }
+
+    func update(title: String) {
+        self.title = title
+    }
+
+    func didFail(error: ImageLoadingError) {
+        activityIndicator.stopAnimating()
+        errorView.isHidden = false
+        errorLabel.text = error.text
+    }
+
 }

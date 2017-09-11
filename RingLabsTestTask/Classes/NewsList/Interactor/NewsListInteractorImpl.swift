@@ -24,7 +24,7 @@ extension NewsListInteractorImpl: NewsListInteractorInput {
     func fetchNewsList() {
         newsListService.loadNewsList() {
             [weak self] result in
-            switch (result) {
+            switch result {
             case .success(let response):
                 self?.didLoad(response: response)
             case .error(let error):
@@ -36,7 +36,7 @@ extension NewsListInteractorImpl: NewsListInteractorInput {
     func fetchNextItems() {
         newsListService.loadNextNewsList() {
             [weak self] result in
-            switch (result) {
+            switch result {
             case .success(let response):
                 self?.didLoad(next: true, response: response)
             case .error(let error):
