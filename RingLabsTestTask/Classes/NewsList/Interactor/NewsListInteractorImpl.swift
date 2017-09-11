@@ -8,6 +8,7 @@ final class NewsListInteractorImpl {
     weak var output: NewsListInteractorOutput?
     fileprivate let newsListService: NewsListService
     fileprivate let newsItemBuilder: NewsItemBuilder
+    fileprivate var loadedCount: Int = 0
     
     init(newsListService: NewsListService) {
         self.newsListService = newsListService
@@ -16,6 +17,10 @@ final class NewsListInteractorImpl {
 }
 
 extension NewsListInteractorImpl: NewsListInteractorInput {
+    struct Constants {
+        static let totalToLoad = 50
+    }
+    
     func fetchNewsList() {
         newsListService.loadNewsList() {
             [weak self] result in
@@ -42,7 +47,8 @@ extension NewsListInteractorImpl: NewsListInteractorInput {
 
     private func didLoad(next: Bool = false, response: EntriesListResponse) {
         let news = response.list.map { self.newsItemBuilder.build(from: $0) }
-        output?.didLoad(page: NewsListPage(news: news, hasNext: true))
+        loadedCount += news.count
+        output?.didLoad(page: NewsListPage(news: news, hasNext: loadedCount < Constants.totalToLoad))
     }
 
     private func didFail(with error: NetworkError, loadingNext: Bool) {

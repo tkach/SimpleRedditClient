@@ -8,6 +8,7 @@ enum LoadMoreState {
     case initial
     case loading
     case failed
+    case disabled
 }
 
 final class LoadMoreModel: CellModel {

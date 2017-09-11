@@ -7,6 +7,7 @@ import Foundation
 final class NewsListServiceImpl {
     fileprivate let apiClient: RedditAPIClient
     fileprivate var lastLoaded: RedditEntryModel?
+    fileprivate var pageLimit: Int = 10
     
     init(apiClient: RedditAPIClient) {
         self.apiClient = apiClient
@@ -14,12 +15,8 @@ final class NewsListServiceImpl {
 }
 
 extension NewsListServiceImpl: NewsListService {
-    struct Constants {
-        static let pageLimit = 20
-    }
-    
     func loadNewsList(completion: @escaping (NetworkResult<EntriesListResponse>) -> ()) {
-        let parameters = ListingParameters(limit: Constants.pageLimit, after: nil, rawJson: true)
+        let parameters = ListingParameters(limit: pageLimit, after: nil, rawJson: true)
         apiClient.getTop(parameters: parameters) {
             result in
             switch (result) {
@@ -37,7 +34,7 @@ extension NewsListServiceImpl: NewsListService {
             completion(.error(NetworkError()))
             return
         }
-        let parameters = ListingParameters(limit: Constants.pageLimit, after: last, rawJson: true)
+        let parameters = ListingParameters(limit: pageLimit, after: last, rawJson: true)
         apiClient.getTop(parameters: parameters) {
             result in
             switch (result) {

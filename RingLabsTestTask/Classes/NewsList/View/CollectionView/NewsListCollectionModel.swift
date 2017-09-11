@@ -4,16 +4,12 @@
 
 import Foundation
 
-protocol CollectionModel {
-    var count: Int { get }
-    
-}
-
-final class NewsListCollectionModel: CollectionModel {
+final class NewsListCollectionModel {
     fileprivate var cellModels: [CellModel] = []
     fileprivate var news: [NewsItem] = []
     private (set) var loadMoreState: LoadMoreState = .initial
-
+    var count: Int { return cellModels.count }
+    
     func append(page: NewsListPage) -> (toDelete: [IndexPath], toInsert: [IndexPath]) {
         let loadmoreIndex: Int? = cellModels.index { $0 is LoadMoreModel }
         cellModels = cellModels.flatMap { $0 as? NewsItem }
@@ -25,6 +21,9 @@ final class NewsListCollectionModel: CollectionModel {
             loadMoreState = .initial
             let loadMore = LoadMoreModel(state: .initial)
             cellModels.append(loadMore)
+        }
+        else {
+            loadMoreState = .disabled
         }
         var toDelete: [IndexPath] = []
         if let loadmoreIndex = loadmoreIndex {
@@ -48,8 +47,6 @@ final class NewsListCollectionModel: CollectionModel {
         let index: Int = cellModels.count - 1
         return IndexPath(item: index, section: 0)
     }
-
-    var count: Int { return cellModels.count }
 
     func cellModel(atIndexPath indexPath: IndexPath) -> CellModel {
         guard indexPath.row < cellModels.count else {

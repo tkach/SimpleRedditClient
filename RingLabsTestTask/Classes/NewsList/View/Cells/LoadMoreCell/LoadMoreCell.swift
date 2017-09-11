@@ -19,7 +19,7 @@ final class LoadMoreCell: UICollectionViewCell, UpdatableCell {
         case .loading:
             errorLabel.isHidden = true
             activityIndicator.startAnimating()
-        case .initial:
+        case .initial, .disabled:
             errorLabel.isHidden = true
             activityIndicator.stopAnimating()
         }
