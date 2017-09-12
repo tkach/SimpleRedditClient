@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B069C59E51748AA295F58978 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C8F61A2B5BD21BF360E8 /* NetworkResult.swift */; };
+		B069C6D8567BF904A13A43C3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069C3FC7A78C2527CA89DE4 /* NetworkError.swift */; };
 		B5FDA6631F686BC4002A10C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5FDA6611F686BC4002A10C5 /* LaunchScreen.storyboard */; };
 		B5FDA6721F686DB3002A10C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDA66C1F686DB3002A10C5 /* AppDelegate.swift */; };
 		B5FDA6731F686DB3002A10C5 /* APIAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDA66E1F686DB3002A10C5 /* APIAssembly.swift */; };
@@ -96,6 +98,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B069C3FC7A78C2527CA89DE4 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		B069C8F61A2B5BD21BF360E8 /* NetworkResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		B5FDA6551F686BC4002A10C5 /* SimpleRedditClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleRedditClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FDA6621F686BC4002A10C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5FDA66C1F686DB3002A10C5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +200,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B069CDF97570430EEEF4C7FF /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		B5FDA64C1F686BC4002A10C5 = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +287,7 @@
 				B5FDA6851F686DBD002A10C5 /* RedditAPIClient.swift */,
 				B5FDA6861F686DBD002A10C5 /* RedditAPIClientImpl.swift */,
 				B5FDA6871F686DBD002A10C5 /* RequestBuilder */,
+				B069CDF97570430EEEF4C7FF /* Errors */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -299,6 +311,8 @@
 				B5FDA6811F686DBD002A10C5 /* RedditImageModel.swift */,
 				B5FDA6821F686DBD002A10C5 /* RedditThumbnailModel.swift */,
 				B5FDA6831F686DBD002A10C5 /* Requests */,
+				B069C8F61A2B5BD21BF360E8 /* NetworkResult.swift */,
+				B069C3FC7A78C2527CA89DE4 /* NetworkError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -794,6 +808,8 @@
 				B5FDA7531F686DE6002A10C5 /* EntriesListViewController.swift in Sources */,
 				B5FDA6AE1F686DBD002A10C5 /* RequestBuilder.swift in Sources */,
 				B5FDA6B21F686DBD002A10C5 /* UIView+Nib.swift in Sources */,
+				B069C59E51748AA295F58978 /* NetworkResult.swift in Sources */,
+				B069C6D8567BF904A13A43C3 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

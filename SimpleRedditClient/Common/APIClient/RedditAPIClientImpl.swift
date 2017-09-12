@@ -25,18 +25,14 @@ extension RedditAPIClientImpl: RedditAPIClient {
                                              path: Paths.topPath,
                                              parameters: parameters)
         let mapping = listingResponseMapping
-        
-        URLSession.shared.dataTask(with: request) {
-            (data: Data?, _, error: Error?) -> Void in
-            
-            let result = self.parse(data: data, error: error, responseMapping: mapping)
+
+        performRequest(request, mapping: mapping) {
+            result in
             DispatchQueue.main.async {
                 completion(result)
             }
-        }.resume()
+        }
     }
-    
-    
 }
 
 private extension RedditAPIClientImpl {
@@ -62,14 +58,32 @@ private extension RedditAPIClientImpl {
         let response = EntriesListResponse(list: models)
         return response
     }
-    
+
+    func performRequest<T>(_ request: URLRequest, mapping: @escaping ([String: Any]) -> T, completion:  @escaping (NetworkResult<T>) -> ()) {
+        URLSession.shared.dataTask(with: request) {
+            (data: Data?, _, error: Error?) -> Void in
+            let result = self.parse(data: data, error: error, responseMapping: mapping)
+            completion(result)
+        }.resume()
+    }
+
     func parse<T>(data: Data?, error: Error?, responseMapping: ([String: Any]) -> T) -> NetworkResult<T> {
         guard let jsonData = data, error == nil else {
-            return .error(NetworkError())
+            return .error(NetworkError(domain: .requestError))
         }
-        let object: [String: Any] = try! JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! [String : Any]
-        let response = responseMapping(object)
-        
-        return .success(response: response)
+        let object: Any
+        do {
+            object = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
+        }
+        catch {
+            return .error(NetworkError(domain: .mappingError))
+        }
+        if let casted = object as? [String : Any] {
+            let response = responseMapping(casted)
+            return .success(response: response)
+        }
+        else {
+            return .error(NetworkError(domain: .mappingError))
+        }
     }
 }
