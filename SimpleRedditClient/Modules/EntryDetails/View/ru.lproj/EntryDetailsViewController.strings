@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "Sorry, something went wrong"; ObjectID = "Ifr-gJ-dyK"; */
+"Ifr-gJ-dyK.text" = "Извините, что-то пошло не так";
+
+/* Class = "UIButton"; normalTitle = "Retry"; ObjectID = "awq-UB-xe8"; */
+"awq-UB-xe8.normalTitle" = "Повторить";

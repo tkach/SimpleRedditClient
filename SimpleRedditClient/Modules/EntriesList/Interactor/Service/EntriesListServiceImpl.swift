@@ -7,7 +7,7 @@ import Foundation
 final class EntriesListServiceImpl {
     fileprivate let apiClient: RedditAPIClient
     fileprivate var lastLoaded: RedditEntryModel?
-    fileprivate var pageLimit: Int = 10
+    fileprivate let pageLimit = 10
     
     init(apiClient: RedditAPIClient) {
         self.apiClient = apiClient

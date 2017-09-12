@@ -70,7 +70,6 @@
 		B5FDA7581F686DE6002A10C5 /* EntryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDA73B1F686DE6002A10C5 /* EntryDetailsView.swift */; };
 		B5FDA7591F686DE6002A10C5 /* EntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDA73C1F686DE6002A10C5 /* EntryDetailsViewController.swift */; };
 		B5FDA75C1F686DEC002A10C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5FDA75B1F686DEC002A10C5 /* Assets.xcassets */; };
-		B5FDA7661F686FA1002A10C5 /* EntryDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5FDA7651F686FA1002A10C5 /* EntryDetailsViewController.storyboard */; };
 		B5FDA7671F6870A6002A10C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5FDA7691F6870A6002A10C5 /* Localizable.strings */; };
 		B5FDA76C1F6870EA002A10C5 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B5FDA76E1F6870EA002A10C5 /* Localizable.stringsdict */; };
 		B5FDA7821F687211002A10C5 /* RedditEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDA7801F687211002A10C5 /* RedditEntry.swift */; };
@@ -83,6 +82,7 @@
 		B5FDA7891F687257002A10C5 /* RedditEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDA6801F686DBD002A10C5 /* RedditEntryModel.swift */; };
 		B5FDA78A1F687257002A10C5 /* RedditImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDA6811F686DBD002A10C5 /* RedditImageModel.swift */; };
 		B5FDA78B1F687257002A10C5 /* RedditThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDA6821F686DBD002A10C5 /* RedditThumbnailModel.swift */; };
+		B5FDA78C1F687A93002A10C5 /* EntryDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5FDA78E1F687A93002A10C5 /* EntryDetailsViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,7 +163,6 @@
 		B5FDA75B1F686DEC002A10C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5FDA75E1F686DF3002A10C5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5FDA7641F686EE9002A10C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/EntriesListViewController.strings; sourceTree = "<group>"; };
-		B5FDA7651F686FA1002A10C5 /* EntryDetailsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EntryDetailsViewController.storyboard; sourceTree = "<group>"; };
 		B5FDA7681F6870A6002A10C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5FDA76A1F6870A9002A10C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5FDA76B1F6870AB002A10C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -174,6 +173,9 @@
 		B5FDA7791F6871F5002A10C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5FDA7801F687211002A10C5 /* RedditEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditEntry.swift; sourceTree = "<group>"; };
 		B5FDA7811F687211002A10C5 /* RedditEntryModelParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditEntryModelParsingTests.swift; sourceTree = "<group>"; };
+		B5FDA78D1F687A93002A10C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EntryDetailsViewController.storyboard; sourceTree = "<group>"; };
+		B5FDA7901F687A98002A10C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EntryDetailsViewController.strings; sourceTree = "<group>"; };
+		B5FDA7921F687A9C002A10C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/EntryDetailsViewController.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -583,7 +585,7 @@
 			children = (
 				B5FDA73B1F686DE6002A10C5 /* EntryDetailsView.swift */,
 				B5FDA73C1F686DE6002A10C5 /* EntryDetailsViewController.swift */,
-				B5FDA7651F686FA1002A10C5 /* EntryDetailsViewController.storyboard */,
+				B5FDA78E1F687A93002A10C5 /* EntryDetailsViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -712,7 +714,7 @@
 				B5FDA7541F686DE6002A10C5 /* EntriesListViewController.storyboard in Resources */,
 				B5FDA74C1F686DE6002A10C5 /* LoadMoreCell.xib in Resources */,
 				B5FDA6631F686BC4002A10C5 /* LaunchScreen.storyboard in Resources */,
-				B5FDA7661F686FA1002A10C5 /* EntryDetailsViewController.storyboard in Resources */,
+				B5FDA78C1F687A93002A10C5 /* EntryDetailsViewController.storyboard in Resources */,
 				B5FDA74A1F686DE6002A10C5 /* EntryItemCell.xib in Resources */,
 				B5FDA7671F6870A6002A10C5 /* Localizable.strings in Resources */,
 				B5FDA75C1F686DEC002A10C5 /* Assets.xcassets in Resources */,
@@ -859,6 +861,16 @@
 				B5FDA7701F6870EC002A10C5 /* ru */,
 			);
 			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+		B5FDA78E1F687A93002A10C5 /* EntryDetailsViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5FDA78D1F687A93002A10C5 /* Base */,
+				B5FDA7901F687A98002A10C5 /* en */,
+				B5FDA7921F687A9C002A10C5 /* ru */,
+			);
+			name = EntryDetailsViewController.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
