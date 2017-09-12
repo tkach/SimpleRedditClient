@@ -21,9 +21,14 @@ final class EntryDetailsViewController: UIViewController {
         presenter.viewLoaded()
     }
 
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        presenter.encodeRestorableState(with: coder)
+    }
+
     @objc func onShare(item: UIBarButtonItem) {
         guard let image = sharingImage else {
-            fatalError("Sharing image should be loaded prior to sharing")
+            fatalError("Share bar button item is disabled when image is not loaded")
         }
         let vc = UIActivityViewController(activityItems: [image],
                                           applicationActivities: nil)

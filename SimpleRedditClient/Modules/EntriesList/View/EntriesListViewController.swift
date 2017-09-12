@@ -76,8 +76,14 @@ extension EntriesListViewController: EntriesListView {
     func didLoad(page: EntriesPage) {
         errorView.isHidden = true
         activityIndicator.stopAnimating()
+        
         let (toDelete, toInsert) = collectionDataSource.append(page: page)
-        collectionView.performBatchUpdates({ 
+        guard view.window != nil else {
+            print("Updating entries list datasource, but not collection since it's not attached to window")
+            return
+        }
+        
+        collectionView.performBatchUpdates({
             if (!toDelete.isEmpty) {
                 self.collectionView.deleteItems(at: toDelete)
             }

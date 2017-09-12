@@ -22,6 +22,10 @@ extension EntryDetailsPresenterImpl: EntryDetailsPresenter {
         loadImage()
     }
 
+    func encodeRestorableState(with coder: NSCoder) {
+        EntryItemCoding.encode(item: item, with: coder)
+    }
+
     func retryButtonTapped() {
         loadImage()
     }
@@ -29,16 +33,17 @@ extension EntryDetailsPresenterImpl: EntryDetailsPresenter {
 
 private extension EntryDetailsPresenterImpl {
     func loadImage() {
-        if let url = item.originalUrl {
-            imageLoader.load(with: url, into: nil) {
-                [weak self] result in
-                
-                switch result {
-                case .success(let image):
-                    self?.view.didLoad(image: image)
-                case .failure(let error):
-                    self?.view.didFail(error: error)
-                }
+        guard let url = item.originalUrl else {
+            print("User is not allowed to open entry details for entry without image")
+            return
+        }
+        imageLoader.load(with: url, into: nil) {
+            [weak self] result in
+            switch result {
+            case .success(let image):
+                self?.view.didLoad(image: image)
+            case .failure(let error):
+                self?.view.didFail(error: error)
             }
         }
     }

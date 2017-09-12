@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--News List View Controller-->
+        <!--Entries List View Controller-->
         <scene sceneID="MDd-Dr-wO6">
             <objects>
-                <viewController storyboardIdentifier="EntriesListViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M4W-jQ-v3y" customClass="EntriesListViewController" customModule="RingLabsTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EntriesListViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M4W-jQ-v3y" customClass="EntriesListViewController" customModule="SimpleRedditClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nmz-Db-lBR"/>
                         <viewControllerLayoutGuide type="bottom" id="qjp-S0-Pk9"/>

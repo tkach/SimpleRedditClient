@@ -5,23 +5,37 @@
 import UIKit
 
 final class AppRouter {
-    fileprivate let controllersAssembly: ModulesAssembly
+    struct Constants {
+        static let rootNavigationRestorationID = "RootNavigationController"
+    }
+    fileprivate let modulesAssembly: ModulesAssembly
     fileprivate lazy var navigationController: UINavigationController = {
-        return UINavigationController(rootViewController: self.controllersAssembly.entriesListViewController())
+        let controller = UINavigationController(rootViewController: self.modulesAssembly.entriesListViewController())
+        controller.restorationIdentifier = Constants.rootNavigationRestorationID
+        return controller
     }()
 
-    init(controllersAssembly: ModulesAssembly) {
-        self.controllersAssembly = controllersAssembly
+    init(modulesAssembly: ModulesAssembly) {
+        self.modulesAssembly = modulesAssembly
     }
 
     func rootViewController() -> UIViewController {
         return navigationController
     }
+    
+    func restoreController(with identifier: String, coder: NSCoder) -> UIViewController? {
+        if (identifier == Constants.rootNavigationRestorationID) {
+            return navigationController
+        }
+        else {
+            return modulesAssembly.restoreController(with: identifier, coder: coder)
+        }
+    }
 }
 
 extension AppRouter: EntriesListRouter {
     func route(to item: EntryItem) {
-        let controller = controllersAssembly.entryDetailsViewController(with: item)
+        let controller = modulesAssembly.entryDetailsViewController(with: item)
         navigationController.pushViewController(controller, animated: true)
     }
 }

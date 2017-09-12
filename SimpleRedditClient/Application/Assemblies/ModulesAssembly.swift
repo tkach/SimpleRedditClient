@@ -5,7 +5,6 @@
 import UIKit
 
 final class ModulesAssembly {
-
     let apiClient: RedditAPIClient
     let utilsAssembly: UtilsAssembly
 
@@ -31,5 +30,19 @@ final class ModulesAssembly {
 
     func entryDetailsViewController(with item: EntryItem) -> UIViewController {
         return entryDetailsAssembly.build(with: item)
+    }
+
+    func restoreController(with identifier: String, coder: NSCoder) -> UIViewController? {
+        if (identifier == EntriesListViewController.storyboardID()) {
+            return entriesListViewController()
+        }
+        else if identifier == EntryDetailsViewController.storyboardID() {
+            return restoreEntryDetailsViewController(with: coder)
+        }
+        return nil
+    }
+
+    private func restoreEntryDetailsViewController(with coder: NSCoder) -> UIViewController {
+        return entryDetailsAssembly.build(with: coder)
     }
 }

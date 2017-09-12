@@ -9,6 +9,10 @@
 import UIKit
 
 extension UIViewController {
+    class func storyboardID() -> String {
+        return String(describing: self)
+    }
+
     class func fromStoryboard(name: String? = nil) -> Self {
         let name = name ?? String(describing: self)
         return instantiateFromStoryboardHelper(type: self, name: name)

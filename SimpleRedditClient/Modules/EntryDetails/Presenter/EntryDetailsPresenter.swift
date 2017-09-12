@@ -7,4 +7,5 @@ import Foundation
 protocol EntryDetailsPresenter {
     func viewLoaded()
     func retryButtonTapped()
+    func encodeRestorableState(with coder: NSCoder)
 }
