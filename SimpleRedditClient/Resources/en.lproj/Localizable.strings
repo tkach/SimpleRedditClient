@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  SimpleRedditClient
+
+  Created by Alexander Tkachenko on 9/12/17.
+  Copyright © 2017 Alexander Tkachenko. All rights reserved.
+*/
+
+"EntriesList.Top" = "Top";
+"DateFormatter.Ago" = "ago";
+"EntryItemCell.PostedBy" = "posted by";
+"EntryItem.Share" = "Share";
+"NetworkError" = "Network failure";
+"ImageLoadError" = "Failed to load image";

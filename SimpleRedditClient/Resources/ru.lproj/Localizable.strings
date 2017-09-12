@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  SimpleRedditClient
+
+  Created by Alexander Tkachenko on 9/12/17.
+  Copyright © 2017 Alexander Tkachenko. All rights reserved.
+*/
+
+"EntriesList.Top" = "Топ";
+"DateFormatter.Ago" = "назад";
+"EntryItemCell.PostedBy" = "автор:";
+"EntryItem.Share" = "Поделиться/Сохранить";
+"NetworkError" = "Ошибка сети";
+"ImageLoadError" = "Ошибка при загрузке картинки";
