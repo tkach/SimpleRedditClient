@@ -7,9 +7,7 @@ import UIKit
 final class EntriesListCollectionDataSource: NSObject {
     fileprivate let model: EntriesListCollectionModel
     fileprivate let dateFormatter = DateFormatter()
-    var hasData: Bool {
-        return model.count > 0
-    }
+    var isEmpty: Bool { return model.count == 0 }
     
     init(model: EntriesListCollectionModel) {
         self.model = model
@@ -37,11 +35,9 @@ extension EntriesListCollectionDataSource: UICollectionViewDataSource {
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellModel = model.cellModel(atIndexPath: indexPath)
-        
         let identifier = cellModel.reuseIdentifier()
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
-                for: indexPath)
 
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
         if let cell = cell as? EntryItemCell,
            let model = cellModel as? EntryItem {
             cell.dateFormatter = dateFormatter
@@ -55,7 +51,6 @@ extension EntriesListCollectionDataSource: UICollectionViewDataSource {
             fatalError("Cell is created but can be updated because type of cell and model is not listed in the cases above")
         }
         return cell
-
     }
 }
 

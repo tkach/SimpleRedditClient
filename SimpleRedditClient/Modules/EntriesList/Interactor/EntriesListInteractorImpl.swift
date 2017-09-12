@@ -36,16 +36,18 @@ extension EntriesListInteractorImpl: EntriesListInteractorInput {
     private func didLoad(response: EntriesListResponse) {
         let entries = response.list.map { self.entryItemBuilder.build(from: $0) }
         loadedCount += entries.count
-        output?.didLoad(page: EntriesPage(entries: entries, hasNext: loadedCount < Constants.totalToLoad))
+        let hasNext = loadedCount < Constants.totalToLoad
+        output?.didLoad(page: EntriesPage(entries: entries, hasNext: hasNext))
     }
 
     private func didFail(with error: NetworkError) {
         let isFirstPageFailed = loadedCount == 0
+        let error = EntriesListError(text: "NetworkError".localized())
         if (isFirstPageFailed) {
-            output?.didFail(error: EntriesListError(text: "NetworkError".localized()))
+            output?.didFail(error: error)
         }
         else {
-            output?.didFailLoadingNext(error: EntriesListError(text: "NetworkError".localized()))
+            output?.didFailLoadingNext(error: error)
         }
     }
 }

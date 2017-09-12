@@ -1,6 +1,5 @@
 //
 //  EntriesListAssembly.swift
-//  RingLabsTestTask
 //
 //  Created by Alexander Tkachenko on 9/9/17.
 //
@@ -62,7 +61,7 @@ class EntriesListViewController: UIViewController {
 
 extension EntriesListViewController: EntriesListView {
     func didStartLoading() {
-        let isFirstLoad = !collectionDataSource.hasData
+        let isFirstLoad = collectionDataSource.isEmpty
         if (isFirstLoad) {
             errorView.isHidden = true
             activityIndicator.startAnimating()
@@ -82,7 +81,6 @@ extension EntriesListViewController: EntriesListView {
             print("Updating entries list datasource, but not collection since it's not attached to window")
             return
         }
-        
         collectionView.performBatchUpdates({
             if (!toDelete.isEmpty) {
                 self.collectionView.deleteItems(at: toDelete)

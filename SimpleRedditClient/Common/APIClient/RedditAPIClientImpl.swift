@@ -5,15 +5,14 @@
 import Foundation
 
 final class RedditAPIClientImpl {
-    let requestBuilder: RequestBuilder
-
     struct Paths {
         static let baseUrl = "http://www.reddit.com"
         static let topPath = "top.json"
     }
+    fileprivate let requestBuilder: RequestBuilder
 
-    init() {
-        requestBuilder = RequestBuilder()
+    init(requestBuilder: RequestBuilder) {
+        self.requestBuilder = requestBuilder
     }
 }
 
@@ -25,7 +24,6 @@ extension RedditAPIClientImpl: RedditAPIClient {
                                              path: Paths.topPath,
                                              parameters: parameters)
         let mapping = listingResponseMapping
-
         performRequest(request, mapping: mapping) {
             result in
             DispatchQueue.main.async {

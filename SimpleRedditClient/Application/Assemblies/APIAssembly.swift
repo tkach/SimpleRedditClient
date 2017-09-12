@@ -6,6 +6,6 @@ import Foundation
 
 final class APIAssembly {
     lazy var apiClient: RedditAPIClient = {
-        return RedditAPIClientImpl()
+        return RedditAPIClientImpl(requestBuilder: RequestBuilder())
     }()
 }

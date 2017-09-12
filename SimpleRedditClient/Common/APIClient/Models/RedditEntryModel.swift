@@ -41,7 +41,6 @@ extension RedditImageModel: Convertible {
         } ?? ""
         return RedditImageModel(url: URL(string: imageSource))
     }
-
 }
 
 extension RedditThumbnailModel: Convertible {

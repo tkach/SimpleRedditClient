@@ -16,19 +16,16 @@ enum RequestMethod {
 }
 
 final class RequestBuilder {
-    
     func request(method: RequestMethod, baseURL: String, path: String, parameters: [String: String]) -> URLRequest {
         let urlString = baseURL + "/" + path
         guard var components = URLComponents(string: urlString) else {
-            fatalError("Cant create components url \(urlString)")
+            fatalError("Cant create components with url \(urlString)")
         }
         var items = [URLQueryItem]()
-        for (key,value) in parameters {
+        for (key, value) in parameters {
             items.append(URLQueryItem(name: key, value: value))
         }
-        if !items.isEmpty {
-            components.queryItems = items
-        }
+        components.queryItems = items
         guard let url = components.url else {
             fatalError("Can't compose request url")
         }

@@ -6,21 +6,18 @@ import Foundation
 
 final class EntriesListCollectionModel {
     fileprivate var cellModels: [CellModel] = []
-    fileprivate var entries: [EntryItem] = []
     private (set) var loadMoreState: LoadMoreState = .initial
     var count: Int { return cellModels.count }
     
     func append(page: EntriesPage) -> (toDelete: [IndexPath], toInsert: [IndexPath]) {
         let loadmoreIndex: Int? = cellModels.index { $0 is LoadMoreModel }
-        cellModels = cellModels.flatMap { $0 as? EntryItem
-        }
+        cellModels = cellModels.flatMap { $0 as? EntryItem }
         
-        let startingInsertIndex = entries.count
-        entries.append(contentsOf: page.entries)
+        let startingInsertIndex = cellModels.count
         cellModels.append(contentsOf: page.entries as [CellModel])
         if (page.hasNext) {
             loadMoreState = .initial
-            let loadMore = LoadMoreModel(state: .initial)
+            let loadMore = LoadMoreModel(state: loadMoreState)
             cellModels.append(loadMore)
         }
         else {
@@ -45,13 +42,13 @@ final class EntriesListCollectionModel {
         }
         loadMoreState = state
         loadMoreModel.state = state
-        let index: Int = cellModels.count - 1
-        return IndexPath(item: index, section: 0)
+        let loadmoreIndex: Int = cellModels.count - 1
+        return IndexPath(item: loadmoreIndex, section: 0)
     }
 
     func cellModel(atIndexPath indexPath: IndexPath) -> CellModel {
         guard indexPath.row < cellModels.count else {
-            fatalError("There is no cell model for current index path")
+            fatalError("There is no cell model for given index path")
         }
         let cellModel = cellModels[indexPath.row]
         return cellModel

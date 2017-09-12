@@ -8,12 +8,12 @@ final class EntriesListCellHeightsCache {
     private var heights: [String: CGFloat] = [:]
     
     func store(height: CGFloat, for width: CGFloat, key: String) {
-        let cacheKey = "\(width)" + key
+        let cacheKey = "\(width)+++" + key
         heights[cacheKey] = height
     }
 
     func fetch(for width: CGFloat, key: String) -> CGFloat? {
-        let cacheKey = "\(width)" + key
+        let cacheKey = "\(width)+++" + key
         return heights[cacheKey]
     }
 }
