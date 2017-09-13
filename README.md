@@ -22,5 +22,4 @@ To Do
 --
 - OAuth authentication
 
-
-<img src="https://raw.githubusercontent.com/tkach/SimpleRedditClient/master/demo.png" alt="Demo 1" style="width: 150px;"/>
+![ScreenShot](Demo.png)
