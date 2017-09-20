@@ -300,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				B5FDA6781F686DBD002A10C5 /* APIClient */,
-				B5FDA6891F686DBD002A10C5 /* CollectionView */,
 				B5FDA68A1F686DBD002A10C5 /* Extensions */,
 				B5FDA6911F686DBD002A10C5 /* Router */,
 				B5FDA6931F686DBD002A10C5 /* Services */,
@@ -362,13 +361,6 @@
 				B5FDA6881F686DBD002A10C5 /* RequestBuilder.swift */,
 			);
 			path = RequestBuilder;
-			sourceTree = "<group>";
-		};
-		B5FDA6891F686DBD002A10C5 /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		B5FDA68A1F686DBD002A10C5 /* Extensions */ = {

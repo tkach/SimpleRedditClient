@@ -11,6 +11,7 @@ final class EntriesListCollectionDataSource: NSObject {
     
     init(model: EntriesListCollectionModel) {
         self.model = model
+        super.init()
     }
 
     func registerCells(collectionView: UICollectionView) {
