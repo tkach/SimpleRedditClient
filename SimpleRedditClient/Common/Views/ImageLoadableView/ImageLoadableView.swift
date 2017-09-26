@@ -10,6 +10,7 @@ final class ImageLoadableView: UIView, ImageLoadable {
     @IBInspectable var animated: Bool = true
     
     private var image: UIImage?
+    private var urlInProgress: URL?
     private var dirty: Bool { return image != imageView.image }
     
     func load(imageURL: URL?) {
@@ -17,11 +18,13 @@ final class ImageLoadableView: UIView, ImageLoadable {
             image = nil
             return
         }
-        
+        urlInProgress = url
         imageLoader.load(with: url, into: self) {
             [weak self] result in
-            self?.image = result.image
-            self?.updateSubviews()
+            if (url == self?.urlInProgress) {
+                self?.image = result.image
+                self?.updateSubviews()
+            }
         }
     }
     
